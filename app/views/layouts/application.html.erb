@@ -16,18 +16,21 @@
 		</div>
 		<div id="header" class="center">
 			<div id="logo">
-				<img src="/images/logo.png" alt="rss feed" />
+				<%= link_to root_path do %>
+				   <%= image_tag "/images/logo.png" %>
+				<% end %>
 			</div>
 			
 			<div id="buttons-list">
 				<ul class="list-inline buttons">
-					<li><%= link_to "ABOUT", root_path %></li>
+					
+					<li class="head-li"><%= link_to "TRAINING", training_path %></li>
+					
 					<% if user_signed_in? %>
-					<li><%= link_to "TRAINING", training_path %></li>
-					<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+						<li class="head-li"><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 					<% else %>
-					<li><%= link_to "SIGN UP", new_user_registration_path %></li>
-					<li><%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></li>
+						<li class="head-li"><%= link_to "SIGN UP", new_user_registration_path %></li>
+						<li class="head-li"><%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></li>
 					<% end %>
 				</ul>
 				
