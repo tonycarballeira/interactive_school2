@@ -9,17 +9,19 @@
 </head>
 <body>
 	<div id="page" class="center">
-		<div class="current-user">
-			<% if user_signed_in? %>
-			<p>Welcome, <%= current_user.first_name %> !</p>
-			<% end %>
-		</div>
+		
 		<div id="header" class="center">
 			<div id="logo">
 				<%= link_to root_path do %>
 				   <%= image_tag "/images/logo.png" %>
 				<% end %>
 			</div>
+			
+			<% if user_signed_in? %>
+				<div class="current-user">
+					<p>Hi, <%= current_user.first_name %> !</p>
+				</div>
+			<% end %>
 			
 			<div id="buttons-list">
 				<ul class="list-inline buttons">

@@ -306,8 +306,13 @@ p.big {
 	position: absolute;
 	color: white;
 	font-family: 'Open Sans', sans-serif;
-	right: 30px;
-	top: 40px;
+	left: 790px;
+	top: 42px;
+	max-width: 147px;
+	font-size: 11px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .password {
