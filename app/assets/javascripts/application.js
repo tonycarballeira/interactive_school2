@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require_tree 
 function cycleImages(){
 	      var $active = $('#image-carousel .active');
 	      var $next = ($active.next().length > 0) ? $active.next() : $('#image-carousel img:first');
