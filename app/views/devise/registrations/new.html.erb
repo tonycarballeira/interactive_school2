@@ -1,0 +1,57 @@
+<div class="new-user">
+
+  <div class="form-header"><p>BUY FULL SITE ACCESS NOW</p></div>
+  <div class="signup-form">
+    <div class="form-sub-header"><p>Start your account</p></div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      
+
+      <div class="field">
+        <%= f.label :email, 'EMAIL ADDRESS' %><br />
+        <%= f.email_field :email, autocomplete: "off", class: "form-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, 'PASSWORD' %>
+        <%= f.password_field :password, autocomplete: "off", class: "form-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, 'PASSWORD CONFIRMATION' %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :first_name, 'FIRST NAME' %><br />
+        <%= f.text_field :first_name, autocomplete: "off", class: "form-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :last_name, 'LAST NAME' %><br />
+        <%= f.text_field :last_name, autocomplete: "off", class: "form-field" %>
+      </div>
+
+      <div class="actions sub">
+        <%= f.submit "", class: "submit"%>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="price">
+    <p>$99</p>
+  </div>
+
+  <div class="script">
+    <p class="big-script">START LEARNING NOW!</p>
+  </div>
+  
+  <div class="lil-script">
+    <p>1 full year of training and support</p>
+  </div>
+</div>
+  
+  
+
+<div class="tree-image">
+    <img src="/images/purchase-page-img.png"/>
+</div>

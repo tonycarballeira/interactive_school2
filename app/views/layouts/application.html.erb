@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InteractiveSchool</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="page" class="center">
+		<div class="current-user">
+			<% if user_signed_in? %>
+			<p>Welcome, <%= current_user.first_name %> !</p>
+			<% end %>
+		</div>
+		<div id="header" class="center">
+			<div id="logo">
+				<img src="/images/logo.png" alt="rss feed" />
+			</div>
+			
+			<div id="buttons-list">
+				<ul class="list-inline buttons">
+					<li><%= link_to "ABOUT", root_path %></li>
+					<% if user_signed_in? %>
+					<li><%= link_to "TRAINING", training_path %></li>
+					<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+					<% else %>
+					<li><%= link_to "SIGN UP", new_user_registration_path %></li>
+					<li><%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></li>
+					<% end %>
+				</ul>
+				
+			</div>
+			<div class="alert-div">
+					<ul class="notice">
+						<% if notice %>
+						  <li class="alert"><%= notice %></li>
+						<% end %>
+			
+						<% if alert %>
+						  <li class="alert"><%= alert %></li>
+						<% end %>
+					</ul>
+			</div>
+		</div>
+		<div id="body">
+			<div id="image-carousel">
+				<img class="active" src="/images/banner1.jpg" alt="My image"/>
+				<img src="/images/banner2.jpg" alt="My image"/>
+			</div>
+			
+
+			<%= yield %>
+
+
+		</div>
+		
+		<div class="footer">
+			<div id="facebook">
+				<a href="#"> <img src="/images/facebook.png"/> </a>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
