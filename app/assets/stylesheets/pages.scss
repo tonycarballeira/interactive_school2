@@ -201,6 +201,18 @@ p.big {
 	margin-bottom: 12px;
 }
 
+.sign-field {
+	width: 200px;
+	display: inline-block;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 1px;
+	border-color: grey; 
+	margin-bottom: 12px;
+}
+
 .form-field:focus {
 	text-decoration: none;
 }
@@ -215,10 +227,27 @@ p.big {
 	font-size: 23px;
 }
 
+.form-sub-headers {
+	font-family: 'Open Sans', sans-serif;
+	position: absolute;
+	top: 7px;
+	color: grey;
+	font-size: 23px;
+	margin-top: 18px;
+	margin-left: 39px;
+}
+
 .field {
 	color: grey;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10px;
+	
+}
+
+.car {
+	margin-left: 35px;
+	margin-top: 50px;
+	display: inline-block;
 }
 
 .form-header {
@@ -336,8 +365,27 @@ p.big {
 #myModal .modal-content {
 	top: 200px;
 	outline: none;
-	height: 207px;
-	width: 550px;
+	height: 202px;
+	width: 542px;
 	background: url(../images/login.png);
+	background-repeat:no-repeat;
+    background-position:center; 
+    border-color: grey;
+}
+
+
+.modal-backdrop
+{
+    opacity:0 !important;
+}
+
+.submit-it {
+	color: grey;
+	background: black;
+	border:none;
+	margin-left: 30px;
+	margin-top: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
 }
 
