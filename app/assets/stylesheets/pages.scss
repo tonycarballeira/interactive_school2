@@ -332,3 +332,12 @@ p.big {
 .head-li {
 	margin-right:11px;
 }
+
+#myModal .modal-content {
+	top: 200px;
+	outline: none;
+	height: 207px;
+	width: 550px;
+	background: url(../images/login.png);
+}
+

@@ -29,3 +29,15 @@ $(document).ready(function(){
 // run every 7s
 	setInterval('cycleImages()', 7000);
 })
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+
+    var a = $(".video");
+   a.click(function(e)
+   {
+
+       e.preventDefault();
+
+   });
+});
