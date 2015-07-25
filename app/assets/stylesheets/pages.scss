@@ -336,6 +336,8 @@ p.big {
 	position: absolute;
 	top: 120px;
 	left: 90px;
+	width: 770px;
+	height: 434px;
 }
 
 .current-user {
@@ -388,4 +390,10 @@ p.big {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
 }
+
+iframe {
+	width:770px;
+	height: 434px;
+}
+
 
