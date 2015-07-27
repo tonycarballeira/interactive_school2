@@ -2,10 +2,15 @@
 
   <div class="form-header"><p>BUY FULL SITE ACCESS NOW</p></div>
   <div class="signup-form">
-    <div class="form-sub-header"><p>Start your account</p></div>
+    <div class="form-sub-header">Start your account</div>
+    
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      
-
+    <ul>
+            <% resource.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+    
       <div class="field">
         <%= f.label :email, 'EMAIL ADDRESS' %><br />
         <%= f.email_field :email, autocomplete: "off", class: "form-field" %>
@@ -30,12 +35,61 @@
         <%= f.label :last_name, 'LAST NAME' %><br />
         <%= f.text_field :last_name, autocomplete: "off", class: "form-field" %>
       </div>
-
+    
       <div class="actions sub">
         <%= f.submit "", class: "submit"%>
       </div>
-    <% end %>
   </div>
+  
+  <div class="payment-form">
+    <div class="form-sub-header"><p>Payment Method</p></div>
+
+    <div class="field">
+
+      <%= f.fields_for :subscription do |builder| %>
+          
+          <ul>
+        <% resource.subscription.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+          </ul>
+        
+        <div class="field">
+          <%= builder.label :card_type, "CARD TYPE" %><br />
+          <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]] %>
+        </div>
+
+        <div class="field">
+          <%= builder.label :card_number, "CREDIT CARD NUMBER" %><br />
+          <%= builder.text_field :card_number, class: "form-field" %>
+        </div>
+
+        <div class="field">
+          <%= builder.label :first_name, "FIRST NAME" %><br />
+          <%= builder.text_field :first_name, class: "form-field" %>
+        </div>
+
+        <div class="field">
+          <%= builder.label :last_name, "LAST NAME" %><br />
+          <%= builder.text_field :last_name, class: "form-field" %>
+        </div>
+
+        <div class="field">
+          <%= builder.label :card_verification, "CVV2" %><br />
+          <%= builder.text_field :card_verification, class: "form-field" %>
+        </div>
+
+        <div class="field">
+          <%= builder.label :card_expires_on, "EXPIRATION DATE" %><br />
+          <%= builder.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true %>
+        </div>
+      
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+  
 
   <div class="price">
     <p>$99</p>

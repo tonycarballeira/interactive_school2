@@ -162,8 +162,8 @@ p.big {
 .signup-form {
 	position: absolute;
 	width: 390px;
-	height: 400px;
-	top: 95px;
+	height: 355px;
+	top: 80px;
 	left: 40px;
 	background: #151515;
 	border-width: 1px;
@@ -171,7 +171,23 @@ p.big {
 	border-color: grey;
 	border-style: solid;
 	padding-left: 20px;
-	padding-top: 50px;
+	padding-top: 35px;
+
+}
+
+.payment-form {
+	position: absolute;
+	width: 390px;
+	height: 355px;
+	top: 470px;
+	left: 40px;
+	background: #151515;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: grey;
+	border-style: solid;
+	padding-left: 20px;
+	padding-top: 35px;
 }
 
 .new-user {
@@ -196,7 +212,7 @@ p.big {
 	height: 32px;
 	border-width: 1px;
 	border-color: grey; 
-	margin-bottom: 12px;
+	margin-bottom: 7px;
 }
 
 .sign-field {
@@ -218,8 +234,6 @@ p.big {
 .form-sub-header {
 	font-family: 'Open Sans', sans-serif;
 	position: absolute;
-	padding-bottom:20px;
-	margin-bottom: 12px;
 	top: 7px;
 	color: #8CA29D;
 	font-size: 23px;
@@ -259,7 +273,7 @@ p.big {
 
 .sub {
 	position: absolute;
-	top: 430px;
+	top: 1000px;
 	width: 308px;
 	height: 50px;
 	background: url(../images/signup.png);
