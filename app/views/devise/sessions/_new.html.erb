@@ -1,0 +1,23 @@
+<div class="form-sub-headers"><p>YOU MUST LOG IN TO VIEW THIS VIDEO</p></div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-inline" }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="field car">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: "sign-field" %>
+      </div>
+
+      <div class="field car">
+        <%= f.label :password %><br />
+        <% if @validatable %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "off", class: "sign-field" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Submit", class: "submit-it" %>
+      </div>
+<% end %>
+
+
+

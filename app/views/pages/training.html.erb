@@ -1,0 +1,18 @@
+<div class="training-vid">
+
+  <div class="form-header"><p>HERE IS YOUR TRAINING</p></div>
+
+  <div class="video" data-toggle="modal" data-target="#myModal">
+    <% if user_signed_in? %>
+      
+      <iframe src="http://player.vimeo.com/video/65102146" frameborder="0" webkitallowfullscreen 
+        mozallowfullscreen allowfullscreen>  
+      </iframe>
+    
+    <% else %>
+      
+      <a href="#" onclick="return false"><img src="/images/video_place_holder.jpg"/></a>
+    
+    <% end %>
+  </div>
+</div>
