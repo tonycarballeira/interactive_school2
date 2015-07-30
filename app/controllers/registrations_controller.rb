@@ -8,10 +8,12 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-        super
-        resource.subscription.save!
-        @response = resource.subscription.response
+    super
+    resource.subscription.ip_address = request.remote_ip
+    if !resource.subscription.credit_card.errors.full_messages.any?
+     resource.subscription.save!
     end
+  end
  
   private
  

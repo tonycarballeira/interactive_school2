@@ -49,8 +49,10 @@
       <%= f.fields_for :subscription do |builder| %>
           
           <ul>
-        <% resource.subscription.errors.full_messages.each do |message| %>
+            <% if resource.subscription.credit_card.errors.full_messages.any? %>
+        <% resource.subscription.credit_card.errors.full_messages.each do |message| %>
           <li><%= message %></li>
+          <% end %>
         <% end %>
           </ul>
         

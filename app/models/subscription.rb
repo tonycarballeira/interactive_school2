@@ -4,6 +4,8 @@ class Subscription < ActiveRecord::Base
 
 	attr_accessor :card_number, :card_verification
 
+  validate :validate_card, :on => :create
+
 	def purchase
 	    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
 	    # transactions.create!(:action => "purchase", :amount => price_in_cents, :response => response)
@@ -12,10 +14,10 @@ class Subscription < ActiveRecord::Base
   	end
   
 	def price_in_cents
-	(99*100).round
+	 (99*100).round
 	end
 
-	private
+	
 
 	def purchase_options
     {
@@ -34,7 +36,7 @@ class Subscription < ActiveRecord::Base
 	def validate_card
     unless credit_card.valid?
       credit_card.errors.full_messages.each do |message|
-        errors.add_to_base message
+        errors[:base] << message
       end
     end
   end
