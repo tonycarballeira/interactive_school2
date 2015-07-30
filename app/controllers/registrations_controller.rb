@@ -10,7 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     super
     resource.subscription.ip_address = request.remote_ip
-    if !resource.subscription.credit_card.errors.full_messages.any?
+    if !resource.subscription.errors.full_messages.any?
      resource.subscription.save!
     end
   end

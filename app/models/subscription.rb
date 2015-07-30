@@ -7,7 +7,7 @@ class Subscription < ActiveRecord::Base
   validate :validate_card, :on => :create
 
 	def purchase
-	    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
+	    response = GATEWAY.purchase(price_in_cents, credit_card, :ip => ip_address)
 	    # transactions.create!(:action => "purchase", :amount => price_in_cents, :response => response)
 	    # cart.update_attribute(:purchased_at, Time.now) if response.success?
 	    response.success?
@@ -17,7 +17,7 @@ class Subscription < ActiveRecord::Base
 	 (99*100).round
 	end
 
-	
+	private
 
 	def purchase_options
     {
