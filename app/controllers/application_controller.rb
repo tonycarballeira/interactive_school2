@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     stored_location_for(resource) || 
       if resource.is_a?(User) 
-        training_path
+        edit_user_registration_path
       else
         super
       end
@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   def after_sign_up_path_for(resource)
     stored_location_for(resource) || 
       if resource.is_a?(User) 
-        training_path
+        edit_user_registration_path
       else
         super
       end
