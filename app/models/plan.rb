@@ -4,6 +4,10 @@ class Plan < ActiveRecord::Base
 	attr_accessor :card_number, :card_verification
 
 	validate :validate_card, :on => :create
+
+	# after_initialize do |plan|
+ #    	plan.ip_address = request.remote_ip
+ #  	end
   
   def purchase
     response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
