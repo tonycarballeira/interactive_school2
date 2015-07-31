@@ -76,6 +76,40 @@ a:hover {
 	margin:0 auto;
 }
 
+#image-banner {
+	height: 345px;
+	position:relative;
+	margin:0 auto;
+	background: url(../images/banner.jpg);
+}
+
+.banner-name {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 40px;
+	color: #3E6D7A;
+	position: absolute;
+	top: 25px;
+	left: 35px;
+}
+
+.time-left {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	color: #A4CCD7;
+	position: absolute;
+	top: 130px;
+	left: 40px;
+}
+
+.countdown {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	color: #A4CCD7;
+	position: absolute;
+	top: 160px;
+	left: 40px;
+}
+
 
 #image-carousel img {
 	position:absolute;

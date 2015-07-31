@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree 
+
+
 function cycleImages(){
 	      var $active = $('#image-carousel .active');
 	      var $next = ($active.next().length > 0) ? $active.next() : $('#image-carousel img:first');
@@ -30,14 +32,30 @@ $(document).ready(function(){
 	setInterval('cycleImages()', 7000);
 })
 
+
+
 $(document).ready(function(){
-    $('[data-toggle="popover"]').popover(); 
-
-    var a = $(".video");
-   a.click(function(e)
-   {
-
-       e.preventDefault();
-
-   });
+  
+ var options = {
+    autostart: true,
+    m: 1,
+    S: 30,
+    // show a message after the countdown timer once the countdown has ended
+    done: function() {
+        $('#my-countdown').after("<p>Time's up!</p>");
+    },
+    // el and opts will refer to the element the countdown is running on and opts are the options assigned to it
+    tpl: function(el,opts) {
+        // use underscore to generate the markup to be displayed from the countdown-tpl template
+        var template = _.template(
+            $('#countdown-tpl').html()
+        );
+        // display the template
+        $(el).html(template(opts));
+    }
+}
+// instantiate the countdown
+$("#timer").countdown(options);
 });
+
+
