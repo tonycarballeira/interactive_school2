@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_one :plan
+  accepts_nested_attributes_for :plan, allow_destroy: true
   after_initialize :defaults
 
   devise :database_authenticatable, :registerable,
