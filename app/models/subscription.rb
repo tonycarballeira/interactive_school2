@@ -7,15 +7,18 @@ class Subscription < ActiveRecord::Base
 
   validate :validate_card, :on => :create
 
+  after_save :purchase
+
 	def purchase
+      puts "shaves"
 	    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
 	    # transactions.create!(:action => "purchase", :amount => price_in_cents, :response => response)
 	    # cart.update_attribute(:purchased_at, Time.now) if response.success?
-	    response.success?
+	    @cool = response.success?
   end
   
 	def price_in_cents
-	 (99*100).round
+	 (49.5*100).round
 	end
 
 	private
@@ -47,8 +50,8 @@ class Subscription < ActiveRecord::Base
       :type               => card_type,
       :number             => card_number,
       :verification_value => card_verification,
-      :month              => card_expires_on.month.to_i,
-      :year               => card_expires_on.year.to_i,
+      :month              => card_expires_on.month,
+      :year               => card_expires_on.year,
       :first_name         => first_name,
       :last_name          => last_name
     )
