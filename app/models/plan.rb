@@ -3,7 +3,7 @@ class Plan < ActiveRecord::Base
 
 	attr_accessor :card_number, :card_verification
 
-	validate_on_create :validate_card
+	validate :validate_card, :on => :create
   
   def purchase
     response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
@@ -51,5 +51,4 @@ class Plan < ActiveRecord::Base
       :last_name          => last_name
     )
   end
-end
 end
