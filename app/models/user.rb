@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_one :plan
   accepts_nested_attributes_for :plan, allow_destroy: true
+  
   after_initialize :defaults
 
   devise :database_authenticatable, :registerable,

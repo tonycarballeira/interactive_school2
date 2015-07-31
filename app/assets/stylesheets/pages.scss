@@ -64,6 +64,21 @@ a:hover {
 	
 }
 
+.payment-form {
+	position: absolute;
+	width: 390px;
+	height: 355px;
+	top: 470px;
+	left: 40px;
+	background: #151515;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: grey;
+	border-style: solid;
+	padding-left: 20px;
+	padding-top: 35px;
+}
+
 
 #cycler{position:relative;}
 #cycler img{position:absolute;z-index:1}
