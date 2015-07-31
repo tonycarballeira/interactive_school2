@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ip address</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Card type</th>
+      <th>Card expires on</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plans.each do |plan| %>
+      <tr>
+        <td><%= plan.ip_address %></td>
+        <td><%= plan.first_name %></td>
+        <td><%= plan.last_name %></td>
+        <td><%= plan.card_type %></td>
+        <td><%= plan.card_expires_on %></td>
+        <td><%= link_to 'Show', plan %></td>
+        <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+        <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plan', new_plan_path %>

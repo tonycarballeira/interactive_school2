@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ip address:</strong>
+  <%= @plan.ip_address %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @plan.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @plan.last_name %>
+</p>
+
+<p>
+  <strong>Card type:</strong>
+  <%= @plan.card_type %>
+</p>
+
+<p>
+  <strong>Card expires on:</strong>
+  <%= @plan.card_expires_on %>
+</p>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>
