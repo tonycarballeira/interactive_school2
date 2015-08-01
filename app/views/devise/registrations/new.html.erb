@@ -83,7 +83,7 @@
           <%= builder.date_select :card_expires_on, {:discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true}, :html => {class: "form-field"} %>
         </div>
 
-        <div class="field dis">
+        <div class="field dis fer">
           <%= builder.label :card_verification, "CVV2" %><br />
           <%= builder.text_field :card_verification, class: "form-field-card" %>
         </div>
