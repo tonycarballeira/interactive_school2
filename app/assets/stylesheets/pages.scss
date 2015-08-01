@@ -12,13 +12,14 @@ body {
 	margin: 0;
 	min-width: 970px;
 	padding: 0;
+	overflow: visible;
 }
 
 #page {
 	background: white;
 	margin: 0 auto;
 	width: 960px;
-	overflow: auto;
+	overflow: visible;
 }
 #header {
 	background: url(../images/header.jpg);
@@ -257,7 +258,7 @@ p.big {
 }
 
 .card-select {
-	
+	background-color: black;
 }
 
 .payment-form {
@@ -314,7 +315,10 @@ p.big {
 	border-width: 1px;
 	border-color: grey; 
 	margin-bottom: 7px;
+	font-size: 14px;
 }
+
+
 
 .edit-field1 {
 	width: 110px;
@@ -450,6 +454,8 @@ p.big {
 	padding-top: 11px;
 	height: 55px;
 }
+
+
 
 .sign-field {
 	width: 200px;

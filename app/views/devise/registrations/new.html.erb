@@ -58,23 +58,24 @@
         
         <div class="field">
           <%= builder.label :card_type, "CARD TYPE" %><br />
-          <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]], {}, {class: "card-select"} %>
+          <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]], {}, {class: "form-field"} %>
         </div>
 
         <div class="field">
           <%= builder.label :card_number, "CREDIT CARD NUMBER" %><br />
           <%= builder.text_field :card_number, class: "form-field" %>
         </div>
-
-        <div class="field">
+        <div class="row2">
+        <div class="field dis">
           <%= builder.label :first_name, "FIRST NAME" %><br />
           <%= builder.text_field :first_name, class: "form-field" %>
         </div>
 
-        <div class="field">
+        <div class="field dis">
           <%= builder.label :last_name, "LAST NAME" %><br />
           <%= builder.text_field :last_name, class: "form-field" %>
         </div>
+      </div>
 
         <div class="field">
           <%= builder.label :card_verification, "CVV2" %><br />
