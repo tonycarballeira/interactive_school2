@@ -88,8 +88,34 @@
           <%= builder.text_field :card_verification, class: "form-field-card" %>
         </div>
       </div>
-      <% end %>
+      
     </div>
+  </div>
+  
+  <div class="address">
+    <div class="form-sub-header"><p>Billing Address</p></div>
+          <div class="field-country">
+            <%= builder.label :country, "COUNTRY" %><br />
+            <%= builder.text_field :country, class: "form-field" %>
+          </div>
+
+          <div class="field">
+            <%= builder.label :state, "STATE" %><br />
+            <%= builder.text_field :state, class: "form-field" %>
+          </div>
+        <div class="row2">
+          <div class="field dis">
+            <%= builder.label :city, "CITY" %><br />
+            <%= builder.text_field :city, class: "form-field-name" %>
+          </div>
+
+          <div class="field dis">
+            <%= builder.label :postal_code, "POSTAL CODE" %><br />
+            <%= builder.text_field :postal_code, class: "form-field-name" %>
+          </div>
+        </div>
+
+    <% end %>
   </div>
 <% end %>
 

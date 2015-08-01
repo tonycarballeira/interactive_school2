@@ -276,6 +276,21 @@ p.big {
 	padding-top: 35px;
 }
 
+.address {
+	position: absolute;
+	width: 450px;
+	height: 235px;
+	top: 800px;
+	left: 40px;
+	background: #151515;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: grey;
+	border-style: solid;
+	padding-left: 20px;
+	padding-top: 35px;
+}
+
 .block_land {
 	position: absolute;
 	width: 223px;
@@ -342,6 +357,8 @@ p.big {
 	margin-bottom: 7px;
 	font-size: 14px;
 }
+
+
 
 .form-field-card {
 	width: 105px;
@@ -545,6 +562,13 @@ p.big {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10px;
 	
+}
+
+.field-country {
+	color: grey;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10px;
+	margin-top: 10px;
 }
 
 .car {

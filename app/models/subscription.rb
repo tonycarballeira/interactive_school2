@@ -7,14 +7,23 @@ class Subscription < ActiveRecord::Base
 
   validate :validate_card, :on => :create
 
-  after_save :purchase
+  after_save :purchase, :log_shit
 
 	def purchase
-      puts "shaves"
 	    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
 	    # transactions.create!(:action => "purchase", :amount => price_in_cents, :response => response)
 	    # cart.update_attribute(:purchased_at, Time.now) if response.success?
-	    @cool = response.success?
+	    response.success?
+      puts response
+  end
+
+  def log_shit
+    puts "holy moly"
+    puts city
+    puts state
+    puts first_name
+    puts country
+    puts postal_code
   end
   
 	def price_in_cents
@@ -27,11 +36,11 @@ class Subscription < ActiveRecord::Base
     {
       :ip => ip_address,
       :billing_address => {
-        :name     => "Ryan Bates",
-        :city     => "New York",
-        :state    => "NY",
-        :country  => "US",
-        :zip      => "10001"
+        :name     => first_name + " " + last_name,
+        :city     => city,
+        :state    => state,
+        :country  => country,
+        :zip      => postal_code
       }
     }
   end
