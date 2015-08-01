@@ -80,31 +80,49 @@
 
         <div class="new-user">
         
-          <p>Edit <%= resource_name.to_s.humanize %></p>
+          
 
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
-
-              <div class="field">
-                <%= f.label :first_name %><br />
-                <%= f.text_field :first_name, class: "form-field" %>
+              <div class="labels1">
+                <div class="lab1">NAME</div>
+                <div class="lab2">AGE</div>
+                <div class="lab3">LOCATION</div>
               </div>
+              <div class="row1">
+                <div class="field dis">
+                  <%= f.text_field :first_name, class: "edit-field1" %>
+                </div>
 
-              <div class="field">
-                <%= f.label :last_name %><br />
-                <%= f.text_field :last_name, class: "form-field" %>
+                <div class="field dis">  
+                  <%= f.text_field :last_name, class: "edit-field2" %>
+                </div>
+
+                <div class="field dis">
+                  <%= f.text_field :age, class: "edit-field3" %>
+                </div>
+
+                <div class="field dis">
+                  <%= f.text_field :location, class: "edit-field4" %>
+                </div>
               </div>
-
-              <div class="field">
-                <%= f.label :age %><br />
-                <%= f.text_field :age, class: "form-field" %>
+              
+              <div class="labels1">
+                <div class="lab1">EMAIL</div>
+                <div class="lab2"></div>
+                <div class="lab3b">FAVORITE COLOR</div>
               </div>
+              
+              <div class="row1">
+                <div class="field dis">
+                  <%= f.email_field :email, class: "edit-field1b" %>
+                </div>
 
-              <div class="field">
-                <%= f.label :email %><br />
-                <%= f.email_field :email, class: "form-field" %>
+                <div class="field dis">
+                  <%= f.text_field :fav_color, class: "edit-field4b" %>
+                </div>
               </div>
-
+              
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                 <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
               <% end %>
@@ -124,10 +142,7 @@
                 <%= f.password_field :current_password, autocomplete: "off", class: "form-field" %>
               </div>
 
-              <div class="field">
-                <%= f.label :age %><br />
-                <%= f.text_field :age, class: "form-field" %>
-              </div>
+              
 
               <div class="actions">
                 <%= f.submit "Update" %>

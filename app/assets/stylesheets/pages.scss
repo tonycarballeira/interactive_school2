@@ -49,7 +49,29 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.dis {
+	display: inline-block;
+}
 
+.lab1 {
+	display: inline-block;
+	margin-left:36px;
+}
+
+.lab2 {
+	display: inline-block;
+	margin-left:278px;
+}
+
+.lab3 {
+	display: inline-block;
+	margin-left:127px;
+}
+
+.lab3b {
+	display: inline-block;
+	margin-left:148px;
+}
 
 a {
 	color: grey;
@@ -249,6 +271,103 @@ p.big {
 	margin-bottom: 7px;
 }
 
+.edit-field1 {
+	width: 110px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 0;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size:17px;
+	margin-left:35px;
+}
+
+.edit-field2 {
+	width: 130px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 0;
+	border-color: grey; 
+	margin-bottom: 7px;
+    font-size:17px;
+}
+
+.edit-field3 {
+	width: 50px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 0;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size:17px;
+	margin-left: 67px;
+}
+
+.edit-field4 {
+	width: 165px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 0;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size:17px;
+	margin-left: 99px;
+}
+
+.edit-field1b {
+	width: 350px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 0;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size:17px;
+	margin-left:35px;
+}
+
+.edit-field4b {
+	width: 165px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 0;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size:17px;
+	margin-left: 110px;
+}
+
+
+
+.edit-field:focus{
+	text-decoration: none;
+}
+
+.labels1 {
+	color:grey;
+	margin-bottom: 8px;
+	font-size: 11px;
+	height: 35px;
+	padding-top: 22px;
+}
+
+.row1 {
+	background-color:black;
+	padding-top: 6px;
+	height: 45px;
+}
+
 .sign-field {
 	width: 200px;
 	display: inline-block;
@@ -310,7 +429,7 @@ p.big {
 	top: 1000px;
 	width: 308px;
 	height: 50px;
-	background: url(../images/signup.png);
+	ground: url(../images/signup.png);
 }
 
 
@@ -440,6 +559,22 @@ p.big {
 iframe {
 	width:770px;
 	height: 434px;
+}
+
+::-webkit-input-placeholder {
+   color: red;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: red;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;  
+}
+
+:-ms-input-placeholder {  
+   color: red;  
 }
 
 
