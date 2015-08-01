@@ -58,7 +58,7 @@
         
         <div class="field">
           <%= builder.label :card_type, "CARD TYPE" %><br />
-          <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]] %>
+          <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]], {}, {class: "card-select"} %>
         </div>
 
         <div class="field">
@@ -104,10 +104,11 @@
   <div class="lil-script">
     <p>1 full year of training and support</p>
   </div>
+
+  
+    <img src="/images/purchase-page-img.png" class="rep"/>
+
 </div>
   
   
 
-<div class="tree-image">
-    <img src="/images/purchase-page-img.png"/>
-</div>
