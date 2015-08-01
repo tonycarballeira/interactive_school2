@@ -264,7 +264,7 @@ p.big {
 .payment-form {
 	position: absolute;
 	width: 450px;
-	height: 380px;
+	height: 292px;
 	top: 470px;
 	left: 40px;
 	background: #151515;
@@ -306,6 +306,31 @@ p.big {
 	background: url(../images/background1.jpg);
 }
 
+#user_subscription_attributes_card_expires_on_1i {
+	width: 110px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 1px;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size: 14px;
+}
+
+#user_subscription_attributes_card_expires_on_2i {
+	width: 110px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 1px;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size: 14px;
+	margin-left: 10px;
+}
+
 .form-field {
 	width: 350px;
 	background-color: black;
@@ -318,6 +343,30 @@ p.big {
 	font-size: 14px;
 }
 
+.form-field-card {
+	width: 105px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 1px;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size: 14px;
+	margin-left: 10px;
+}
+
+.form-field-name{
+	width: 174px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 1px;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size: 14px;
+}
 
 
 .edit-field1 {

@@ -28,7 +28,6 @@ class Subscription < ActiveRecord::Base
       :ip => ip_address,
       :billing_address => {
         :name     => "Ryan Bates",
-        :address1 => "123 Main St.",
         :city     => "New York",
         :state    => "NY",
         :country  => "US",
