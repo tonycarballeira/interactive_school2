@@ -1,18 +1,15 @@
 <div class="new-user">
 
   <div class="form-header"><p>BUY FULL SITE ACCESS NOW</p></div>
+  
   <div class="signup-form">
+    
     <div class="form-sub-header">Start your account</div>
     
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <ul>
-            <% resource.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-    
-      <div class="field">
-        <%= f.label :email, 'EMAIL ADDRESS' %><br />
+             
+      <div class="field-email">
+        <%= f.label :email, 'EMAIL ADDRESS' %>
         <%= f.email_field :email, autocomplete: "off", class: "form-field" %>
       </div>
 
@@ -35,88 +32,103 @@
         <%= f.label :last_name, 'LAST NAME' %><br />
         <%= f.text_field :last_name, autocomplete: "off", class: "form-field" %>
       </div>
-    
-      <div class="actions sub">
-        <%= f.submit "", class: "submit"%>
-      </div>
+      
   </div>
   
   <div class="payment-form">
+    
     <div class="form-sub-header"><p>Payment Method</p></div>
 
     <div class="field">
 
       <%= f.fields_for :subscription do |builder| %>
-          
-          <ul>
-            <% if resource.subscription.errors.full_messages.any? %>
-        <% resource.subscription.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-          <% end %>
-        <% end %>
-          </ul>
-        
-        <div class="field">
-          <%= builder.label :card_type, "CARD TYPE" %><br />
-          <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]], {}, {class: "form-field"} %>
-        </div>
+          <div class="field-card">
+                <%= builder.label :card_type, "CARD TYPE" %><br />
+                <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]], {}, {class: "form-field"} %>
+              </div>
 
-        <div class="field">
-          <%= builder.label :card_number, "CREDIT CARD NUMBER" %><br />
-          <%= builder.text_field :card_number, class: "form-field" %>
-        </div>
-        
-        <div class="row2">
-          <div class="field dis">
-            <%= builder.label :first_name, "FIRST NAME" %><br />
-            <%= builder.text_field :first_name, class: "form-field-name" %>
+              <div class="field">
+                <%= builder.label :card_number, "CREDIT CARD NUMBER" %><br />
+                <%= builder.text_field :card_number, class: "form-field" %>
+              </div>
+              
+              <div class="row2">
+                <div class="field dis">
+                  <%= builder.label :first_name, "FIRST NAME" %><br />
+                  <%= builder.text_field :first_name, class: "form-field-name" %>
+                </div>
+
+                <div class="field dis">
+                  <%= builder.label :last_name, "LAST NAME" %><br />
+                  <%= builder.text_field :last_name, class: "form-field-name" %>
+                </div>
+              </div>
+            <div class="row2">
+              <div class="field dis">
+                <%= builder.label :card_expires_on, "EXPIRATION DATE" %><br />
+                <%= builder.date_select :card_expires_on, {:discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true}, :html => {class: "form-field"} %>
+              </div>
+
+              <div class="field dis fer">
+                <%= builder.label :card_verification, "CVV2" %><br />
+                <%= builder.text_field :card_verification, class: "form-field-card" %>
+              </div>
+            </div>
           </div>
-
-          <div class="field dis">
-            <%= builder.label :last_name, "LAST NAME" %><br />
-            <%= builder.text_field :last_name, class: "form-field-name" %>
-          </div>
-        </div>
-      <div class="row2">
-        <div class="field dis">
-          <%= builder.label :card_expires_on, "EXPIRATION DATE" %><br />
-          <%= builder.date_select :card_expires_on, {:discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true}, :html => {class: "form-field"} %>
-        </div>
-
-        <div class="field dis fer">
-          <%= builder.label :card_verification, "CVV2" %><br />
-          <%= builder.text_field :card_verification, class: "form-field-card" %>
-        </div>
-      </div>
-      
-    </div>
   </div>
   
   <div class="address">
+    
     <div class="form-sub-header"><p>Billing Address</p></div>
-          <div class="field-country">
-            <%= builder.label :country, "COUNTRY" %><br />
-            <%= builder.text_field :country, class: "form-field" %>
-          </div>
+    
+    <div class="field-country">
+      <%= builder.label :country, "COUNTRY" %><br />
+      <%= builder.text_field :country, class: "form-field" %>
+    </div>
 
-          <div class="field">
-            <%= builder.label :state, "STATE" %><br />
-            <%= builder.text_field :state, class: "form-field" %>
-          </div>
-        <div class="row2">
-          <div class="field dis">
-            <%= builder.label :city, "CITY" %><br />
-            <%= builder.text_field :city, class: "form-field-name" %>
-          </div>
+    <div class="field">
+      <%= builder.label :state, "STATE" %><br />
+      <%= builder.text_field :state, class: "form-field" %>
+    </div>
+    
+    <div class="row2">
+      <div class="field dis">
+        <%= builder.label :city, "CITY" %><br />
+        <%= builder.text_field :city, class: "form-field-name" %>
+      </div>
 
-          <div class="field dis">
-            <%= builder.label :postal_code, "POSTAL CODE" %><br />
-            <%= builder.text_field :postal_code, class: "form-field-name" %>
-          </div>
-        </div>
+      <div class="field dis">
+        <%= builder.label :postal_code, "POSTAL CODE" %><br />
+        <%= builder.text_field :postal_code, class: "form-field-name" %>
+      </div>
+    </div>
 
-    <% end %>
+    <% end %>  
   </div>
+
+      <% if resource.subscription.errors.full_messages.any? %>
+          <div class="actions sub" onclick="return false" data-toggle="modal" data-target="#myModal">
+            <%= f.submit "", class: "submit"%>
+          </div>
+          <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <% resource.subscription.errors.full_messages.each do |message| %>
+                      <ul>  
+                        <li><%= message %></li>
+                    <% end %>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+          </div>
+      <% else %>
+          <div class="actions sub">
+            <%= f.submit "", class: "submit"%>
+          </div>
+      <% end %>
+
 <% end %>
 
   
