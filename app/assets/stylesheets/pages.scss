@@ -73,6 +73,25 @@ body {
 	margin-left:148px;
 }
 
+.lab4 {
+	display: inline-block;
+	margin-left:36px;
+}
+
+.infer {
+	font-size: 10px;
+}
+
+.lab5 {
+	display: inline-block;
+	margin-left:60px;
+}
+
+.lab6 {
+	display: inline-block;
+	margin-left:120px;
+}
+
 a {
 	color: grey;
 }
@@ -280,12 +299,12 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:17px;
+	font-size:19px;
 	margin-left:35px;
 }
 
 .edit-field2 {
-	width: 130px;
+	width: 160px;
 	background-color: black;
 	transition: box-shadow 0.3s;
 	text-decoration: none;
@@ -293,7 +312,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-    font-size:17px;
+    font-size:19px;
 }
 
 .edit-field3 {
@@ -305,8 +324,8 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:17px;
-	margin-left: 67px;
+	font-size:19px;
+	margin-left: 35px;
 }
 
 .edit-field4 {
@@ -318,7 +337,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:17px;
+	font-size:19px;
 	margin-left: 99px;
 }
 
@@ -331,7 +350,20 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:17px;
+	font-size:19px;
+	margin-left:35px;
+}
+
+.edit-field1c {
+	width: 250px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 0;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size:19px;
 	margin-left:35px;
 }
 
@@ -344,10 +376,35 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:17px;
+	font-size:19px;
 	margin-left: 110px;
 }
 
+.edit-field4c{
+	width: 215px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 0;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size:19px;
+	margin-left: 59px;
+}
+
+.edit-field5 {
+	width: 215px;
+	background-color: black;
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 32px;
+	border-width: 0;
+	border-color: grey; 
+	margin-bottom: 7px;
+	font-size:19px;
+	margin-left: 74px;
+}
 
 
 .edit-field:focus{
@@ -355,11 +412,11 @@ p.big {
 }
 
 .labels1 {
-	color:grey;
+	color: #3E6D7A;
 	margin-bottom: 8px;
 	font-size: 11px;
 	height: 35px;
-	padding-top: 22px;
+	padding-top: 18px;
 }
 
 .row1 {
