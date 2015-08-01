@@ -1,0 +1,25 @@
+<div class="training-vid">
+
+  <div class="form-header"><p>HERE IS YOUR TRAINING</p></div>
+
+  <% if !user_signed_in? %>
+        <div class="video" onclick="return false" data-toggle="modal" data-target="#myModal">
+          <a href="#"><img src="/images/video_place_holder.jpg"/></a>
+        </div>
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <%= render "devise/sessions/new" %>
+              </div>
+            </div>
+          </div>
+        </div>
+  <% else %>
+    <div class="video">
+      <iframe src="http://player.vimeo.com/video/65102146" frameborder="0" webkitallowfullscreen 
+          mozallowfullscreen allowfullscreen>  
+      </iframe>
+    </div>
+  <% end %>
+</div>
