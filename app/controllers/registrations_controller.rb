@@ -29,6 +29,10 @@ class RegistrationsController < Devise::RegistrationsController
 			u.permit(:subscription_attributes => [:card_type, :card_expires_on])
 		end
 	end
+
+	def update_resource(resource, params)
+    	resource.update_without_password(params)
+  	end
 	
 	def sign_up_params
 		params.require(resource_name).permit(:email, :password, :password_confirmation, :first_name, :last_name, :fav_color, :age, :location, :subscription_attributes => [:card_type, :card_expires_on, :first_name, :last_name, :card_number, :card_verification])
