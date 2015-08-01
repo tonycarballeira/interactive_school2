@@ -106,19 +106,28 @@
     <% end %>  
   </div>
 
-      <% if resource.subscription.errors.full_messages.any? %>
-          <div class="actions sub" onclick="return false" data-toggle="modal" data-target="#myModal">
+      <% if resource.subscription.errors.full_messages.any? || resource.errors.full_messages.any? %>
+          <div class="actions sub" onclick="return false" data-toggle="modal" data-target="#rmyModal">
             <%= f.submit "", class: "submit"%>
           </div>
-          <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal" id="rmyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-body">
-                    <% resource.subscription.errors.full_messages.each do |message| %>
-                      <ul>  
-                        <li><%= message %></li>
+                    <% if resource.errors.full_messages.any? %>
+                      <% resource.errors.full_messages.each do |message| %>
+                        <ul>  
+                          <li><%= message %></li>
+                      <% end %>
+                        </ul>
+                      <% end %>
+                    <% if resource.subscription.errors.full_messages.any? %>
+                      <% resource.subscription.errors.full_messages.each do |message| %>
+                        <ul>  
+                          <li><%= message %></li>
+                      <% end %>
+                        </ul>
                     <% end %>
-                      </ul>
                   </div>
                 </div>
               </div>
