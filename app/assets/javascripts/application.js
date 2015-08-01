@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require owl.carousel
 //= require_tree 
 
 
@@ -33,29 +34,26 @@ $(document).ready(function(){
 })
 
 
-
-$(document).ready(function(){
-  
- var options = {
-    autostart: true,
-    m: 1,
-    S: 30,
-    // show a message after the countdown timer once the countdown has ended
-    done: function() {
-        $('#my-countdown').after("<p>Time's up!</p>");
-    },
-    // el and opts will refer to the element the countdown is running on and opts are the options assigned to it
-    tpl: function(el,opts) {
-        // use underscore to generate the markup to be displayed from the countdown-tpl template
-        var template = _.template(
-            $('#countdown-tpl').html()
-        );
-        // display the template
-        $(el).html(template(opts));
-    }
-}
-// instantiate the countdown
-$("#timer").countdown(options);
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+ 
 });
+
+
 
 
