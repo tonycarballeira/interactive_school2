@@ -144,7 +144,7 @@ a:hover {
 
 .countdown {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 17px;
+	font-size: 20px;
 	color: #A4CCD7;
 	position: absolute;
 	top: 160px;
@@ -265,8 +265,23 @@ p.big {
 	padding-top: 35px;
 }
 
+.block_land {
+	position: absolute;
+	width: 223px;
+	height: 165;
+	top: 457px;
+	right: 190px;
+}
+
 .new-user {
 	height: 1160px;
+	position:relative;
+	margin:0 auto;
+	background: url(../images/background1.jpg);
+}
+
+.edit-user {
+	height: 500px;
 	position:relative;
 	margin:0 auto;
 	background: url(../images/background1.jpg);
@@ -299,7 +314,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:19px;
+	font-size: 21px;
 	margin-left:35px;
 }
 
@@ -312,7 +327,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-    font-size:19px;
+    font-size:21px;
 }
 
 .edit-field3 {
@@ -324,7 +339,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:19px;
+	font-size:21px;
 	margin-left: 35px;
 }
 
@@ -337,7 +352,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:19px;
+	font-size:21px;
 	margin-left: 99px;
 }
 
@@ -350,7 +365,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:19px;
+	font-size:21px;
 	margin-left:35px;
 }
 
@@ -363,7 +378,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:19px;
+	font-size:21px;
 	margin-left:35px;
 }
 
@@ -376,7 +391,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:19px;
+	font-size:21px;
 	margin-left: 110px;
 }
 
@@ -389,7 +404,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:19px;
+	font-size:21px;
 	margin-left: 59px;
 }
 
@@ -402,7 +417,7 @@ p.big {
 	border-width: 0;
 	border-color: grey; 
 	margin-bottom: 7px;
-	font-size:19px;
+	font-size:21px;
 	margin-left: 54px;
 }
 
@@ -415,14 +430,14 @@ p.big {
 	color: #3E6D7A;
 	margin-bottom: 8px;
 	font-size: 11px;
-	height: 35px;
-	padding-top: 18px;
+	height: 45px;
+	padding-top: 26px;
 }
 
 .row1 {
 	background-color:black;
-	padding-top: 6px;
-	height: 45px;
+	padding-top: 11px;
+	height: 55px;
 }
 
 .sign-field {
