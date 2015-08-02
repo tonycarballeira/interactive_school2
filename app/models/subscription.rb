@@ -7,27 +7,15 @@ class Subscription < ActiveRecord::Base
 
   validate :validate_card, :on => :create
 
-  after_save :purchase, :log_shit
+  after_create :purchase
 
 	def purchase
 	    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
-	    # transactions.create!(:action => "purchase", :amount => price_in_cents, :response => response)
-	    # cart.update_attribute(:purchased_at, Time.now) if response.success?
 	    response.success?
-      puts response
-  end
-
-  def log_shit
-    puts "holy moly"
-    puts city
-    puts state
-    puts first_name
-    puts country
-    puts postal_code
   end
   
 	def price_in_cents
-	 (49.5*100).round
+	 (99*100).round
 	end
 
 	private
