@@ -14,6 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree 
+//= require owl.carousel
+//= require_tree 
+
+
+
 function cycleImages(){
 	      var $active = $('#image-carousel .active');
 	      var $next = ($active.next().length > 0) ? $active.next() : $('#image-carousel img:first');
@@ -30,6 +35,7 @@ $(document).ready(function(){
 	setInterval('cycleImages()', 7000);
 })
 
+
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover(); 
 
@@ -41,3 +47,29 @@ $(document).ready(function(){
 
    });
 });
+
+
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+ 
+});
+
+
+
+
+

@@ -8,11 +8,12 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_devise_permitted_parameters
-    registration_params = [:last_name, :first_name, :email, :password, :password_confirmation]
+    registration_params = [:last_name, :first_name, :email, :password, :password_confirmation, :location, :age, :fav_color, :subscription_attributes => [:card_type, :card_expires_on]]
 
     if params[:action] == 'update'
       devise_parameter_sanitizer.for(:account_update) { 
-        |u| u.permit(registration_params << :current_password)
+        |u| u.permit(registration_params)
+
       }
     elsif params[:action] == 'create'
       devise_parameter_sanitizer.for(:sign_up) { 
@@ -24,7 +25,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     stored_location_for(resource) || 
       if resource.is_a?(User) 
-        training_path
+        edit_user_registration_path
       else
         super
       end
@@ -33,7 +34,7 @@ class ApplicationController < ActionController::Base
   def after_sign_up_path_for(resource)
     stored_location_for(resource) || 
       if resource.is_a?(User) 
-        training_path
+        edit_user_registration_path
       else
         super
       end

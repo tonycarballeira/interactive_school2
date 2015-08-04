@@ -5,9 +5,10 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body data-no-turbolink="true">
+
 	<div id="page" class="center">
 		
 		<div id="header" class="center">
@@ -17,18 +18,15 @@
 				<% end %>
 			</div>
 			
-			<% if user_signed_in? %>
-				<div class="current-user">
-					<p>Hi, <%= current_user.first_name %> !</p>
-				</div>
-			<% end %>
-			
 			<div id="buttons-list">
 				<ul class="list-inline buttons">
 					
 					<li class="head-li"><%= link_to "TRAINING", training_path %></li>
 					
 					<% if user_signed_in? %>
+
+						<li class="head-li"><%= link_to "PROFILE", edit_user_registration_path, :class => 'navbar-link'%></li>
+
 						<li class="head-li"><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 					<% else %>
 						<li class="head-li"><%= link_to "SIGN UP", new_user_registration_path %></li>
@@ -37,6 +35,7 @@
 				</ul>
 				
 			</div>
+
 
 			<div class="alert-div">
 					<ul class="notice">
