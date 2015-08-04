@@ -7,11 +7,14 @@ class Subscription < ActiveRecord::Base
 
   validate :validate_card, :on => :create
 
-  after_create :purchase
+  before_create :purchase
 
 	def purchase
-	    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
-	    response.success?
+    puts "*** making the purchase here ***"
+    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
+    puts "payment result: #{response.success?}"
+    p response
+    response.success?  
   end
   
 	def price_in_cents

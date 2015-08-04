@@ -107,36 +107,40 @@
   </div>
 
       <% if resource.subscription.errors.full_messages.any? || resource.errors.full_messages.any? %>
-          <div class="actions sub" onclick="return false" data-toggle="modal" data-target="#rmyModal">
-            <%= f.submit "", class: "submit"%>
-          </div>
-          <div class="modal" id="rmyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal" id="rmyModal" tabindex="-1" role="dialog">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-body">
+
                     <% if resource.errors.full_messages.any? %>
-                      <% resource.errors.full_messages.each do |message| %>
-                        <ul>  
-                          <li><%= message %></li>
-                      <% end %>
-                        </ul>
-                      <% end %>
-                    <% if resource.subscription.errors.full_messages.any? %>
-                      <% resource.subscription.errors.full_messages.each do |message| %>
-                        <ul>  
-                          <li><%= message %></li>
-                      <% end %>
-                        </ul>
+                      <ul>  
+                        <% resource.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                      </ul>
                     <% end %>
+                    
+                    <%# if resource.subscription.errors.full_messages.any? %>
+                    <% if false %>
+                      <ul>  
+                        <% resource.subscription.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                      </ul>
+                    <% end %>
+
                   </div>
                 </div>
               </div>
           </div>
-      <% else %>
-          <div class="actions sub">
-            <%= f.submit "", class: "submit"%>
-          </div>
+          <%= javascript_tag do -%>
+            $('#rmyModal').modal();
+          <% end -%>
+
       <% end %>
+      <div class="actions sub">
+        <%= f.submit "", class: "submit"%>
+      </div>
 
 <% end %>
 

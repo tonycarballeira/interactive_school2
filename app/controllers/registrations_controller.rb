@@ -7,13 +7,19 @@ class RegistrationsController < Devise::RegistrationsController
 		respond_with self.resource
 	end
 
-	def create
-		super
-		resource.subscription.ip_address = request.remote_ip
-		if !resource.subscription.errors.full_messages.any?
-			resource.subscription.save!
-		end
-	end
+	# def create
+	# 	# begin
+	# 		super
+	# 	# rescue => e
+	# 	# 	resource.errors.add(:base, "Something bad happened.")
+	# 	# 	render :new
+	# 	# end
+	# 	resource.subscription.ip_address = request.remote_ip
+	# 	resource.save
+	# 	# if resource.subscription.purchase
+	# 	# 	resource.subscription.save!
+	# 	# end
+	# end
 
 	def edit
 		render :layout => false
