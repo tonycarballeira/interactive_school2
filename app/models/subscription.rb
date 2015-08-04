@@ -10,11 +10,12 @@ class Subscription < ActiveRecord::Base
   before_create :purchase
 
 	def purchase
-    puts "*** making the purchase here ***"
-    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
-    puts "payment result: #{response.success?}"
-    p response
-    response.success?  
+    @response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
+    @response.success?  
+  end
+
+  def error_message
+    @response.params["Errors"]["LongMessage"]
   end
   
 	def price_in_cents
