@@ -126,29 +126,7 @@
                   <%= f.text_field :fav_color, class: "edit-field4b" %>
                 </div>
               </div>
-
-              <div class="labels1">
-                <div class="lab4">PASSWORD <span class="infer">(leave blank if you don't want to change)</span></div>
-                <div class="lab5">PASSWORD CONFIRMATION</div>
-                <div class="lab6">CURRENT PASSWORD</div>
-              </div>
               
-             
-              <div class="row1">
-                <div class="field dis">
-                  <%= f.password_field :password, autocomplete: "off", class: "edit-field1c"%>
-                </div>
-
-                <div class="field dis">
-                  <%= f.password_field :password_confirmation, autocomplete: "off", class: "edit-field5" %>
-                </div>
-
-                <div class="field dis">
-                  <%= f.password_field :current_password, autocomplete: "off", class: "edit-field4c" %>
-                </div>
-              </div>
-              
-
               <div class="actions">
                 <%= f.submit "Update", class: "submit-it" %>
               </div>
