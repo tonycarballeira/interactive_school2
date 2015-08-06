@@ -3,23 +3,35 @@ class Subscription < ActiveRecord::Base
   has_many :transactions, :class_name => "SubscriptionTransaction"
 	accepts_nested_attributes_for :user
 
-	attr_accessor :card_number, :card_verification
+	attr_accessor :card_number, :card_verification, :years
 
   # validate :validate_card, :on => :create
 
-  before_create :purchase
+  before_save :add_years, :purchase
 
 	def purchase
+    p credit_card
     @response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
+    p @response
     @response.success?  
   end
 
   def error_message
-    @response.params["Errors"]["LongMessage"]
+    if @response != nil
+      @response.params["Errors"]["LongMessage"]
+    end
+  end
+
+  def add_years
+    if self.sub_years != nil 
+      self.sub_years += (years.to_i / 2)
+    else
+      self.sub_years = (years.to_i / 2)
+    end
   end
   
 	def price_in_cents
-	 (1*100).round
+	   (99*100).round
 	end
 
 	private
