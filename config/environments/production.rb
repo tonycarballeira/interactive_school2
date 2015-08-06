@@ -7,9 +7,9 @@ Rails.application.configure do
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :production
       ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-        :login => "tonycarballeira-facilitator_api1.gmail.com",
-        :password => "LNPAQG65LQCYMQV3",
-        :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31A0ShZaeOW9fFliPQvyLtvICvlrDK"
+        :login => "martin_api1.schoolofinteractivedesign.com",
+        :password => "UZDXAXNZ55BU5SG6",
+        :signature => "A1YfrPIf0Ps6.rVRYhoI2Q1UoBpEANUkU6jwxMxNF2qGOmzeYNws0o1a"
       )
   end
 

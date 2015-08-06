@@ -41,12 +41,21 @@ Rails.application.configure do
 
 
   #activemerchant setup for paypal
+  # config.after_initialize do
+  #   ActiveMerchant::Billing::Base.mode = :test
+  #     ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+  #       :login => "tonycarballeira-facilitator_api1.gmail.com",
+  #       :password => "LNPAQG65LQCYMQV3",
+  #       :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31A0ShZaeOW9fFliPQvyLtvICvlrDK"
+  #     )
+  # end
+
   config.after_initialize do
     ActiveMerchant::Billing::Base.mode = :test
       ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-        :login => "tonycarballeira-facilitator_api1.gmail.com",
-        :password => "LNPAQG65LQCYMQV3",
-        :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31A0ShZaeOW9fFliPQvyLtvICvlrDK"
+        :login => "martin-facilitator_api1.schoolofinteractivedesign.com",
+        :password => "GTH7UAJJD6LKNFN3",
+        :signature => "AA72IWPJ09yzQS1VToTV4aW5z2taASjBjZzqhsJ6ILsxb7tb7iW10jEb"
       )
   end
 
