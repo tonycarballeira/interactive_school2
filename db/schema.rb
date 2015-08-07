@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20150801183556) do
     t.datetime "updated_at"
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "sub_expire_date"
+    t.string   "sub_expire_date"
     t.integer  "age"
     t.string   "location"
     t.string   "fav_color"
@@ -91,5 +91,6 @@ ActiveRecord::Schema.define(version: 20150801183556) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "plans", "users"
   add_foreign_key "subscriptions", "users"
 end
