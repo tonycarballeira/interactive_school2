@@ -16,6 +16,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'activeadmin', '~> 1.0.0.pre1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
+gem 'countdown'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -32,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+
+gem 'activemerchant'
+gem 'owlcarousel-rails'
 
 gem 'devise'
 # Use ActiveModel has_secure_password

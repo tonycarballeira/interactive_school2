@@ -1,39 +1,147 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InteractiveSchool</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+</head>
+<body data-no-turbolink="true">
+  <div id="page" class="center">
+      
+      <div id="header" class="center">
+        <div id="logo">
+          <%= link_to root_path do %>
+             <%= image_tag "/images/logo.png" %>
+          <% end %>
+        </div>
+        
+        
+        
+        <div id="buttons-list">
+          <ul class="list-inline buttons">
+            
+            <li class="head-li"><%= link_to "TRAINING", training_path %></li>
+            
+            <% if user_signed_in? %>
+              <li class="head-li"><%= link_to "PROFILE", edit_user_registration_path, :class => 'navbar-link'%></li>
+              <li class="head-li"><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+            <% else %>
+              <li class="head-li"><%= link_to "SIGN UP", new_user_registration_path %></li>
+              <li class="head-li"><%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></li>
+            <% end %>
+          </ul>
+          
+        </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+        <div class="alert-div">
+            <ul class="notice">
+              <% if notice %>
+                <li class="alert"><%= notice %></li>
+              <% end %>
+        
+              <% if alert %>
+                <li class="alert"><%= alert %></li>
+              <% end %>
+            </ul>
+        </div>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <div id="body">
+        <div id="image-banner">
+          <div class="banner-name">
+            <p>HELLO  <%= current_user.first_name.upcase %></p>
+          </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+          <div class="time-left">
+            <p>Time left as a student</p>
+          </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+          <div class="countdown">
+            <% start_time = Date.today  %>
+            <% @end_time = current_user.sub_expire_date.to_date.to_s %>
+                     
+            <div id="getting-started"></div>
+               <%= javascript_tag do %>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+                $("#getting-started")
+                 .countdown("<%= @end_time %>", function(event) {
+                   $(this).text(
+                    event.strftime('%D days %H:%M:%S')
+                   );
+                });
+               <% end %>
+            </div>
+            <div class="add_time">
+              <img src="/images/add_more_time.png"/>
+            </div>
+            
+          </div>
+          
+          
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+        <div class="edit-user">
+          
 
-<h3>Cancel my account</h3>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= devise_error_messages! %>
+              <div class="labels1">
+                <div class="lab1">NAME</div>
+                <div class="lab2">AGE</div>
+                <div class="lab3">LOCATION</div>
+              </div>
+              <div class="row1">
+                <div class="field dis">
+                  <%= f.text_field :first_name, class: "edit-field1" %>
+                </div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+                <div class="field dis">  
+                  <%= f.text_field :last_name, class: "edit-field2" %>
+                </div>
 
-<%= link_to "Back", :back %>
+                <div class="field dis">
+                  <%= f.text_field :age, class: "edit-field3" %>
+                </div>
+
+                <div class="field dis">
+                  <%= f.text_field :location, class: "edit-field4" %>
+                </div>
+              </div>
+              
+              <div class="labels1">
+                <div class="lab1">EMAIL</div>
+                <div class="lab2"></div>
+                <div class="lab3b">FAVORITE COLOR</div>
+              </div>
+              
+              <div class="row1">
+                <div class="field dis">
+                  <%= f.email_field :email, class: "edit-field1b" %>
+                </div>
+
+                <div class="field dis">
+                  <%= f.text_field :fav_color, class: "edit-field4b" %>
+                </div>
+              </div>
+              
+              <div class="actions">
+                <%= f.submit "Update", class: "submit-it" %>
+              </div>
+            <% end %>
+
+            <div class="block_land">
+              <img src="/images/block_land.png"/>
+            </div>
+        </div>
+      
+        <div class="footer">
+          <div id="facebook">
+            <a href="#"> <img src="/images/facebook.png"/> </a>
+        </div>
+      </div>
+    </div>
+</div>
+

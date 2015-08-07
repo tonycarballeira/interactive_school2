@@ -4,6 +4,15 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :production
+      ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+        :login => "martin_api1.schoolofinteractivedesign.com",
+        :password => "UZDXAXNZ55BU5SG6",
+        :signature => "A1YfrPIf0Ps6.rVRYhoI2Q1UoBpEANUkU6jwxMxNF2qGOmzeYNws0o1a"
+      )
+  end
+
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.

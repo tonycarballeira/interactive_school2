@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  resources :subscriptions
+
+
   devise_for :users, controllers: { registrations: "registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,6 +18,9 @@ Rails.application.routes.draw do
   get '/signup', to: 'pages#signup', as: 'signup'
 
   get '/training', to: 'pages#training', as: 'training'
+
+  get '/users/sign_up' => 'registrations#new'
+
 
 
 
