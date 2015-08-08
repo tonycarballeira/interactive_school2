@@ -28,6 +28,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def update
+    puts "hells yeah!"
     current_user.subscription.update(subscription_params)
     redirect_to edit_user_registration_path
   end

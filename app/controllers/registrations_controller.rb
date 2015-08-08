@@ -26,7 +26,7 @@ class RegistrationsController < Devise::RegistrationsController
 		render :layout => false
 	end
 
-	
+
  
   private
  

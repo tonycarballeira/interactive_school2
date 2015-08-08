@@ -3,11 +3,11 @@ class Subscription < ActiveRecord::Base
 	belongs_to :user
 	accepts_nested_attributes_for :user
 
-	attr_accessor :card_number, :card_verification, :years, :sub_years
+	attr_accessor :card_number, :card_verification, :years
 
   # validate :validate_card, :on => :create
-  before_update :add_years
-  around_update :a_thing
+  before_update :add_years, :a_thing
+  # around_update :a_thing
   before_create :purchase
 
 	def purchase
