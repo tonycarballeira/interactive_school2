@@ -26,9 +26,7 @@ class RegistrationsController < Devise::RegistrationsController
 		render :layout => false
 	end
 
-	def update
-		current_user.subscription.update(subscription_params)
-	end
+	
  
   private
  
