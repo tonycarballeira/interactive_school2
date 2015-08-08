@@ -6,16 +6,13 @@ class Subscription < ActiveRecord::Base
 	attr_accessor :card_number, :card_verification, :years
 
   # validate :validate_card, :on => :create
+  
   before_update :set_year, :add_years, :a_thing
-  # around_update :a_thing
   before_create :purchase
 
 	def purchase
-    p credit_card
-    puts "ma nigah"
-    p price_in_cents
-    @response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
-    p @response  
+    @response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)  
+    @years = ""
     @response.success?
   end
 
@@ -25,8 +22,6 @@ class Subscription < ActiveRecord::Base
 
   def a_thing
     years_changed = self.sub_years_changed?
-    puts "a change!"
-    p years_changed
     purchase if years_changed
   end
 
@@ -37,24 +32,15 @@ class Subscription < ActiveRecord::Base
   end
 
   def add_years
-    if self.sub_years != nil 
-      self.sub_years += @years.to_i 
-    # else
-    #   self.sub_years = years.to_i 
+    if (self.sub_years >= 1 && (@years != nil && @years != ""))
+      self.sub_years += @years.to_i  
     end
-    # if years != nil
-    #   self.sub_years += years.to_i 
-    # end
-    puts "heaven!"
-    p sub_years
   end
   
 	def price_in_cents
-    if @years == ""
+    if @years == "" || @years == nil
       @years = 1
     end
-	  puts "colon"
-    p @years 
     (99*100).round * @years.to_i 
 	end
 

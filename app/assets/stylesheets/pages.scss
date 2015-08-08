@@ -143,6 +143,25 @@ a:hover {
 	left: 40px;
 }
 
+.time-add {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	color: white;
+	position: absolute;
+	top: 390px;
+	left: 60px;
+}
+
+
+.time-quote {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	color: white;
+	position: absolute;
+	top: 460px;
+	left: 60px;
+}
+
 .countdown {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
@@ -198,10 +217,17 @@ a:hover {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.increment {
+	position: absolute;
+	top: 420px;
+	left: 310px;
+
+}
+
 .add_time {
 	position: absolute;
-	top: 130px;
-	left: 220px;
+	top: 300px;
+	left: 60px;
 }
 
 .sign-up {
@@ -385,6 +411,19 @@ p.big {
 	border-color: grey; 
 	margin-bottom: 12px;
 	font-size: 14px;
+}
+
+.time-field {
+	width: 65px;
+	background: url(../images/background1.jpg);
+	transition: box-shadow 0.3s;
+	text-decoration: none;
+	height: 72px;
+	border-width: 1px;
+	border-color: black; 
+	border-width: 0px;
+	margin-bottom: 12px;
+	font-size: 60px;
 }
 	
 
@@ -775,6 +814,18 @@ p.big {
 	margin-top: 20px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
+}
+
+.submit-it2 {
+	color: grey;
+	background: url(../images/purchase.png);
+	border:none;
+	margin-left: 30px;
+	margin-top: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	width: 95px;
+	height: 26px;
 }
 
 iframe {

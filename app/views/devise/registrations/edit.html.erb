@@ -63,7 +63,7 @@
             <% start_time = Date.today  %>
             <% @years = current_user.subscription.sub_years %>
             <% if current_user.subscription.sub_years > 1 %>
-            <% @end_time = (current_user.sub_expire_date.to_date + @years.years).to_s %>
+            <% @end_time = (current_user.sub_expire_date.to_date + (@years - 1).years).to_s %>
             <% else %>
             <% @end_time = current_user.sub_expire_date.to_date.to_s %>
             <% end %>
@@ -78,9 +78,7 @@
                 });
                <% end %>
             </div>
-            <div class="add_time">
-              <img src="/images/add_more_time.png"/>
-            </div>
+            
             
           </div>
           
@@ -205,18 +203,31 @@
                 <%= builder.label :postal_code, "POSTAL CODE" %><br />
                 <%= builder.text_field :postal_code, class: "form-field-name" %>
               </div>
+
+              <div class="actions">
+                <%= builder.submit "", class: "submit-it2" %>
+              </div>
             </div>
-            <div class="field">
-              <%= builder.label :years, "number of years" %><br />
-              <%= builder.text_field :years, class: "form-field" %>
-            </div>
+            
               
           </div>
-
-          <div class="actions">
-                <%= builder.submit "Update", class: "submit-it" %>
+          <div class="increment">
+            <div class="field">
+                <%= builder.number_field :years, :min => 1, :value => 1, :max => 10, class: "time-field" %>
+            </div>
           </div>
+          
         <% end %>
+            <div class="add_time">
+              <img src="/images/add_more_time.png"/>
+            </div>
+            <div class="time-add">
+               <p>Years of training you would like to add?</p>
+            </div>
+
+            <div class="time-quote">
+               <p>Special rate of $99 per year</p>
+            </div>
           </div>
         </div>
       
