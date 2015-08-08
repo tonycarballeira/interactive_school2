@@ -41,7 +41,7 @@ class Subscription < ActiveRecord::Base
     if @years == "" || @years == nil
       @years = 1
     end
-    (99*100).round * @years.to_i 
+    (1*100).round * @years.to_i 
 	end
 
 	private
