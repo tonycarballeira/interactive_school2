@@ -61,8 +61,12 @@
 
           <div class="countdown">
             <% start_time = Date.today  %>
+            <% @years = current_user.subscription.sub_years %>
+            <% if current_user.subscription.sub_years > 1 %>
+            <% @end_time = (current_user.sub_expire_date.to_date + @years.years).to_s %>
+            <% else %>
             <% @end_time = current_user.sub_expire_date.to_date.to_s %>
-                     
+            <% end %>
             <div id="getting-started"></div>
                <%= javascript_tag do %>
 
