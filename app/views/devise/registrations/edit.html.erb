@@ -140,7 +140,7 @@
   
             <div class="form-sub-header"><p>Payment Method</p></div>
 
-            <%= form_for resource.subscription do |builder| %>
+            <%= form_for current_user.subscription do |builder| %>
               
                 <div class="field-card">
                   <%= builder.label :card_type, "CARD TYPE" %><br />

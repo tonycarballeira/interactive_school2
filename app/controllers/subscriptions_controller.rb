@@ -21,9 +21,10 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.new(subscription_params)
+    @subscription = current_user.subscription.new(subscription_params)
     @subscription.save
-    respond_with(@subscription)
+    redirect_to edit_user_registration_path
+    # respond_with(@subscription)
   end
 
   def update

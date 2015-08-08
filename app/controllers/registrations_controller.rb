@@ -25,6 +25,10 @@ class RegistrationsController < Devise::RegistrationsController
 	def edit
 		render :layout => false
 	end
+
+	def update
+		current_user.subscription.update(subscription_params)
+	end
  
   private
  
@@ -48,6 +52,6 @@ class RegistrationsController < Devise::RegistrationsController
   
 	
 	def sign_up_params
-		params.require(resource_name).permit(:email, :password, :password_confirmation, :first_name, :last_name, :fav_color, :age, :location, :subscription_attributes => [:card_type, :card_expires_on, :first_name, :last_name, :card_number, :card_verification, :years, :city, :state, :country, :postal_code])
+		params.require(resource_name).permit(:email, :password, :password_confirmation, :first_name, :last_name, :fav_color, :age, :location, :subscription_attributes => [:card_type, :card_expires_on, :first_name, :last_name, :card_number, :sub_years, :card_verification, :years, :city, :state, :country, :postal_code])
 	end
 end

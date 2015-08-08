@@ -1,19 +1,27 @@
 class Subscription < ActiveRecord::Base
+  include ActiveModel::Dirty
 	belongs_to :user
-  has_many :transactions, :class_name => "SubscriptionTransaction"
 	accepts_nested_attributes_for :user
 
-	attr_accessor :card_number, :card_verification, :years
+	attr_accessor :card_number, :card_verification, :years, :sub_years
 
   # validate :validate_card, :on => :create
-
-  before_save :add_years, :purchase
+  before_update :add_years
+  around_update :a_thing
+  before_create :purchase
 
 	def purchase
     p credit_card
     @response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
-    p @response
-    @response.success?  
+    p @response  
+    @response.success?
+  end
+
+  def a_thing
+    years_changed = self.sub_years_changed?
+    puts "a change!"
+    p years_changed
+    purchase if years_changed
   end
 
   def error_message
@@ -24,14 +32,20 @@ class Subscription < ActiveRecord::Base
 
   def add_years
     if self.sub_years != nil 
-      self.sub_years += (years.to_i / 2)
+      self.sub_years += years.to_i 
     else
-      self.sub_years = (years.to_i / 2)
+      self.sub_years = years.to_i 
     end
+    puts "heaven!"
+    p sub_years
   end
   
 	def price_in_cents
-	   (99*100).round
+    if years != nil
+	   years.to_i * (99*100).round
+   else
+      (99*100).round
+    end
 	end
 
 	private
