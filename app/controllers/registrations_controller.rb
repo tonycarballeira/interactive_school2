@@ -25,6 +25,8 @@ class RegistrationsController < Devise::RegistrationsController
 	def edit
 		render :layout => false
 	end
+
+
  
   private
  
@@ -44,8 +46,10 @@ class RegistrationsController < Devise::RegistrationsController
   	def after_update_path_for(resource)
       edit_user_registration_path
     end
+
+  
 	
 	def sign_up_params
-		params.require(resource_name).permit(:email, :password, :password_confirmation, :first_name, :last_name, :fav_color, :age, :location, :subscription_attributes => [:card_type, :card_expires_on, :first_name, :last_name, :card_number, :card_verification, :city, :state, :country, :postal_code])
+		params.require(resource_name).permit(:email, :password, :password_confirmation, :first_name, :last_name, :fav_color, :age, :location, :subscription_attributes => [:card_type, :card_expires_on, :first_name, :last_name, :card_number, :sub_years, :card_verification, :years, :city, :state, :country, :postal_code])
 	end
 end

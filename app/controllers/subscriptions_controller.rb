@@ -21,14 +21,15 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.new(subscription_params)
+    @subscription = current_user.subscription.new(subscription_params)
     @subscription.save
-    respond_with(@subscription)
+    redirect_to edit_user_registration_path
+    # respond_with(@subscription)
   end
 
   def update
-    @subscription.update(subscription_params)
-    respond_with(@subscription)
+    current_user.subscription.update(subscription_params)
+    redirect_to edit_user_registration_path
   end
 
   def destroy
@@ -42,6 +43,7 @@ class SubscriptionsController < ApplicationController
     end
 
     def subscription_params
-      params.require(:subscription).permit(:new, :user_id, :ip_address, :first_name, :last_name, :card_type, :card_expires_on)
+      params.require(:subscription).permit(:new, :user_id, :ip_address, :first_name, :last_name, :card_type, :country, :city, :state, :postal_code, :years, :card_expires_on, :sub_years, :card_number, :card_verification)
     end
+
 end
