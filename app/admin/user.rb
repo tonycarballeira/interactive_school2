@@ -12,6 +12,16 @@ ActiveAdmin.register User do
 #   permitted << :other if resource.something?
 #   permitted
 # end
+	controller do
+		def update
+			if params[:user][:encrypted_password].blank?
+	        params[:user].delete("encrypted_password")
+	        
+      		end
+      		super
+
+	    end
+end
 
 
 end
