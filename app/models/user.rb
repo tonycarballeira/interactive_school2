@@ -13,33 +13,20 @@ class User < ActiveRecord::Base
   def defaults
   	self.sub_expire_date ||= Date.today + 365.days
   end
+  
+  # the following methods are used to disable validation when importing legacy users from csv.
 
-  # def valid_password?(password)
-  #   return false if encrypted_password.blank?
-
-  #   # get it from the database dumbass!
-  #   # self.encrypted_password
-  #   encrypted_password = 'sha256:1000:FboH0V3ksOD4uxoXHnLBaTaIW92UYQfv:76SwPYjfkj0nS+h00hoy/TCbNYJQmO5T'
-
-  #   algo, iterations, salt, hash = encrypted_password.split(':')
-
-  #   # test the attempt
-  #   #hash == Base64.encode64(PBKDF256.pbkdf2_sha256(attempt, salt,   iterations.to_i, 24)).chomp
-
-  #   Devise.secure_compare(Base64.encode64(PBKDF256.pbkdf2_sha256(password, salt, iterations.to_i, 24)).chomp, hash)
+  # def password_required?
+  #   if new_record?
+  #     false
+  #   else
+  #     !persisted? || !password.nil? || !password_confirmation.nil?
+  #   end
   # end
 
-  def password_required?
-    if new_record?
-      false
-    else
-      !persisted? || !password.nil? || !password_confirmation.nil?
-    end
-  end
-
-  def email_required?
-    true
-  end
+  # def email_required?
+  #   true
+  # end
 
   def valid_password?(password)
     begin
