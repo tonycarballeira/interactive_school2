@@ -25,5 +25,6 @@ module InteractiveSchool
     config.assets.precompile += ['active_admin.css']
     config.assets.precompile += ['active_admin.js.coffee']
     config.assets.initialize_on_precompile = false
+    config.serve_static_assets = true
   end
 end
