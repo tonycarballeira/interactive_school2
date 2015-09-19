@@ -24,7 +24,7 @@ module InteractiveSchool
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.precompile += ['active_admin.css']
     config.assets.precompile += ['active_admin.js.coffee']
-    config.assets.initialize_on_precompile = false
-    config.serve_static_assets = true
+    # config.assets.initialize_on_precompile = false
+    # config.serve_static_files = true
   end
 end
