@@ -10,4 +10,11 @@ class PagesController < ApplicationController
 	def training
 		
 	end
+
+	def contact
+
+	end
+
+	def player
+	end
 end

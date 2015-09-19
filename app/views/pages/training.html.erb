@@ -1,25 +1,185 @@
-<div class="training-vid">
+  <!-- main image -->
+  <div class="main-image">
+    <img src="images/slide-image4.jpg" alt="" />
+  </div>
+  <!-- / main image -->
 
-  <div class="form-header"><p>HERE IS YOUR TRAINING</p></div>
+  <!-- page -->
+  <div class="page">
 
-  <% if !user_signed_in? %>
-        <div class="video" onclick="return false" data-toggle="modal" data-target="#myModal">
-          <a href="#"><img src="/images/video_place_holder.jpg"/></a>
-        </div>
-        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-body">
-                <%= render "devise/sessions/new" %>
-              </div>
-            </div>
-          </div>
-        </div>
-  <% else %>
-    <div class="video">
-      <iframe src="http://player.vimeo.com/video/65102146" frameborder="0" webkitallowfullscreen 
-          mozallowfullscreen allowfullscreen>  
-      </iframe>
+    <!-- page header -->
+    <div class="page_header">
+      <h2>Training portal</h2>
+      <ul>
+        <li><a href="#2d">2D game design</a></li>
+        <li><a href="#3d">3D game design</a></li>
+        <li><a href="#ca">computer animation</a></li>
+        <li><a href="#dp">digital painting</a></li>
+      </ul>
     </div>
-  <% end %>
+    <!-- / page header -->
+
+    <!-- banner -->
+    <div class="banner">
+      <a class="swipebox" rel="vimeo" href="http://vimeo.com/22439234"><img src="images/training-banner.jpg" alt="" /></a>
+    </div>
+    <!-- / banner -->
+
+    <!-- page subheader -->
+    <div class="page_subheader">
+      And your training begins
+    </div>
+    <!-- / page subheader -->
+
+    <!-- course list -->
+    <div class="course_list" id="2d">
+      <h4>2D Game design courses</h4>
+      <div class="course_intro">
+        Welcome to your training portal. Here you'll find in-depth training on 2D and 3D game design, computer animation, graphic design, and digital painting. If you are a new student and new to the digital arts, simply start with the very first training series. We take the time to lead students step by step through the basics all the way up to advanced industry techniques. But if you would like to focus more on one subject versus another, feel free to jump around and
+      </div>
+      <div class="course_box">
+        <%= link_to player_path do %>
+            <%= image_tag "/images/course01.jpg", alt: "" %>
+            <span class="title">introduction to game design</span>
+        <% end %>
+      </div>
+      <div class="course_box">
+        <%= link_to player_path do %>
+            <%= image_tag "/images/course02.jpg", alt: "" %>
+            <span class="title">Working with 2d Physics</span>
+        <% end %>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course03.jpg" alt="" /><span class="title">Creating a 2d platformer</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course04.jpg" alt="" /><span class="title">CREATING FLAPPY BIRD</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course05.jpg" alt="" /><span class="title">CREATING AN INDIE PLATFORMER</span></a>
+      </div>
+    </div>
+    <!-- / course list -->
+
+    <!-- course list -->
+    <div class="course_list" id="3d">
+      <h4>3D Game design</h4>
+      <div class="course_intro">
+        Welcome to your training portal. Here you'll find in-depth training on 2D and 3D game design, computer animation, graphic design, and digital painting. If you are a new student and new to the digital arts, simply start with the very first training series. We take the time to lead students step by step through the basics all the way up to advanced industry techniques. But if you would like to focus more on one subject versus another, feel free to jump around and
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course06.jpg" alt="" /><span class="title">Getting Started with Unity3D</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course07.jpg" alt="" /><span class="title">Introduction to coding in c#</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course08.jpg" alt="" /><span class="title">Mastering the Fundamentals</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course09.jpg" alt="" /><span class="title">Building Your First Level</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course10.jpg" alt="" /><span class="title">Creating a Boss Battle</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course11.jpg" alt="" /><span class="title">Working With Particles</span></a>
+      </div>
+    </div>
+    <!-- / course list -->
+
+    <!-- course list -->
+    <div class="course_list" id="ca">
+      <h4>Computer animation</h4>
+      <div class="course_intro">
+        Welcome to your training portal. Here you'll find in-depth training on 2D and 3D game design, computer animation, graphic design, and digital painting. If you are a new student and new to the digital arts, simply start with the very first training series. We take the time to lead students step by step through the basics all the way up to advanced industry techniques. But if you would like to focus more on one subject versus another, feel free to jump around and
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course12.jpg" alt="" /><span class="title">Introduction to Maya</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course13.jpg" alt="" /><span class="title">Introduction to Mudbox</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course14.jpg" alt="" /><span class="title">Introduction to 3D Studio Max</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course15.jpg" alt="" /><span class="title">Polygon Modeling 1 with 3D Studio Max</span></a>
+      </div>
+    </div>
+    <!-- / course list -->
+
+    <!-- course list -->
+    <div class="course_list" id="dp">
+      <h4>Graphic Design</h4>
+      <div class="course_intro">
+        Welcome to your training portal. Here you'll find in-depth training on 2D and 3D game design, computer animation, graphic design, and digital painting. If you are a new student and new to the digital arts, simply start with the very first training series. We take the time to lead students step by step through the basics all the way up to advanced industry techniques. But if you would like to focus more on one subject versus another, feel free to jump around and
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course16.jpg" alt="" /><span class="title">Introduction to Photoshop</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course17.jpg" alt="" /><span class="title">Pro Tips and Tricks</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course18.jpg" alt="" /><span class="title">Creating a Safari Compass</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course19.jpg" alt="" /><span class="title">Working With The Warp Tool</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course20.jpg" alt="" /><span class="title">Pop Out Effect</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course21.jpg" alt="" /><span class="title">Animation Basics</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course22.jpg" alt="" /><span class="title">Introduction to Illustrator</span></a>
+      </div>
+    </div>
+    <!-- / course list -->
+
+    <!-- course list -->
+    <div class="course_list">
+      <h4>Digital painting</h4>
+      <div class="course_intro">
+        Welcome to your training portal. Here you'll find in-depth training on 2D and 3D game design, computer animation, graphic design, and digital painting. If you are a new student and new to the digital arts, simply start with the very first training series. We take the time to lead students step by step through the basics all the way up to advanced industry techniques. But if you would like to focus more on one subject versus another, feel free to jump around and
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course23.jpg" alt="" /><span class="title">Introduction to Digital Painting</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course24.jpg" alt="" /><span class="title">Intermediate Digital Painting</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course25.jpg" alt="" /><span class="title">Creature Concept Design</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course26.jpg" alt="" /><span class="title">Advanced Character Painting</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course27.jpg" alt="" /><span class="title">Advanced Environment Design</span></a>
+      </div>
+      <div class="course_box">
+        <a href=""><img src="images/course28.jpg" alt="" /><span class="title">Advanced Illustration</span></a>
+      </div>
+    </div>
+    <!-- / course list -->
+
+  </div>
+  <!-- page -->
+
 </div>
+<!-- / wrapper -->
+
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "jquery.tubolinks.js" %>
+<%= javascript_include_tag "responsiveslides.min.js" %>
+<%= javascript_include_tag "jquery.swipebox.min.js" %>
+<script type="text/javascript">
+  <!--
+  $(document).ready(function() {
+    $(".swipebox").swipebox();
+  });
+  // -->
+</script>

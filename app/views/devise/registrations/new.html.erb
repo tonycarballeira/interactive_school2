@@ -1,3 +1,24 @@
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "bootstrap.min.js" %>
+<%= javascript_include_tag "application.js" %>
+<div class="slider">
+    <ul id="slides" class="slides">
+      <li>
+        <div class="slider-image"><img src="/images/slide-image2.jpg" alt="" /></div>
+      </li>
+      <li>
+        <div class="slider-image"><img src="/images/slide-image1.jpg" alt="" /></div>
+      </li>
+      <li>
+        <div class="slider-image"><img src="/images/slide-image3.jpg" alt="" /></div>
+      </li>
+      <li>
+        <div class="slider-image"><img src="/images/slide-image4.jpg" alt="" /></div>
+      </li>
+    </ul>
+</div>
+
+
 <div class="new-user">
 
   <div class="form-header"><p>BUY FULL SITE ACCESS NOW</p></div>
@@ -11,27 +32,27 @@
       <div class="field-email">
         <%= f.label :email, 'EMAIL ADDRESS' %>
 
-        <%= f.email_field :email, autocomplete: "off", class: "form-field" %>
+        <%= f.email_field :email, autocomplete: "off", class: "form-field2" %>
       </div>
 
       <div class="field">
         <%= f.label :password, 'PASSWORD' %>
-        <%= f.password_field :password, autocomplete: "off", class: "form-field" %>
+        <%= f.password_field :password, autocomplete: "off", class: "form-field2" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation, 'PASSWORD CONFIRMATION' %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-field" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-field2" %>
       </div>
 
       <div class="field">
         <%= f.label :first_name, 'FIRST NAME' %><br />
-        <%= f.text_field :first_name, autocomplete: "off", class: "form-field" %>
+        <%= f.text_field :first_name, autocomplete: "off", class: "form-field2" %>
       </div>
 
       <div class="field">
         <%= f.label :last_name, 'LAST NAME' %><br />
-        <%= f.text_field :last_name, autocomplete: "off", class: "form-field" %>
+        <%= f.text_field :last_name, autocomplete: "off", class: "form-field2" %>
       </div>
       
   </div>
@@ -45,12 +66,12 @@
       <%= f.fields_for :subscription do |builder| %>
           <div class="field-card">
                 <%= builder.label :card_type, "CARD TYPE" %><br />
-                <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]], {}, {class: "form-field"} %>
+                <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]], {}, {class: "form-field2"} %>
               </div>
 
               <div class="field">
                 <%= builder.label :card_number, "CREDIT CARD NUMBER" %><br />
-                <%= builder.text_field :card_number, class: "form-field" %>
+                <%= builder.text_field :card_number, class: "form-field2" %>
               </div>
               
               <div class="row2">
@@ -67,7 +88,7 @@
             <div class="row2">
               <div class="field dis">
                 <%= builder.label :card_expires_on, "EXPIRATION DATE" %><br />
-                <%= builder.date_select :card_expires_on, {:discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true}, :html => {class: "form-field"} %>
+                <%= builder.date_select :card_expires_on, {:discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true}, :html => {class: "form-field2"} %>
               </div>
 
               <div class="field dis fer">
@@ -84,12 +105,12 @@
     
     <div class="field-country">
       <%= builder.label :country, "COUNTRY" %><br />
-      <%= builder.text_field :country, class: "form-field" %>
+      <%= builder.text_field :country, class: "form-field2" %>
     </div>
 
     <div class="field">
       <%= builder.label :state, "STATE" %><br />
-      <%= builder.text_field :state, class: "form-field" %>
+      <%= builder.text_field :state, class: "form-field2" %>
     </div>
     
     <div class="row2">
@@ -162,4 +183,47 @@
     <img src="/images/purchase-page-img.png" class="rep"/>
 
 </div>
+
   
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "jquery.tubolinks.js" %>
+<%= javascript_include_tag "responsiveslides.min.js" %>
+<%= javascript_include_tag "jquery.swipebox.min.js" %>
+<%= javascript_include_tag "bootstrap.min.js" %>
+
+
+<script type="text/javascript">
+  <!--
+  $(document).ready(function() {
+    $(".swipebox").swipebox();
+    $("ul#slides").responsiveSlides({
+      timeout: 5000,
+      speed: 800,
+      pager: false,
+      nav: false,
+      maxwidth: 960
+    });
+    $("ul#quotes").responsiveSlides({
+      timeout: 5000,
+      speed: 800,
+      pager: false,
+      nav: false,
+      maxwidth: 960
+    });
+    $("ul#courses").responsiveSlides({
+      timeout: 5000,
+      speed: 800,
+      pager: true,
+      nav: false,
+      maxwidth: 960
+    });
+    $("ul#gamernews").responsiveSlides({
+      timeout: 5000,
+      speed: 800,
+      pager: true,
+      nav: false,
+      maxwidth: 960
+    });
+  });
+  // -->
+</script>

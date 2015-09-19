@@ -1,3 +1,20 @@
+<div class="slider">
+    <ul id="slides" class="slides">
+      <li>
+        <div class="slider-image"><img src="/images/slide-image2.jpg" alt="" /></div>
+      </li>
+      <li>
+        <div class="slider-image"><img src="/images/slide-image1.jpg" alt="" /></div>
+      </li>
+      <li>
+        <div class="slider-image"><img src="/images/slide-image3.jpg" alt="" /></div>
+      </li>
+      <li>
+        <div class="slider-image"><img src="/images/slide-image4.jpg" alt="" /></div>
+      </li>
+    </ul>
+</div>
+
 <div class="signup">
 
   <div class="form-header"><p>SIGN IN</p></div>
@@ -36,3 +53,46 @@
   </div>
 </div>
 
+
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "jquery.tubolinks.js" %>
+<%= javascript_include_tag "responsiveslides.min.js" %>
+<%= javascript_include_tag "jquery.swipebox.min.js" %>
+<%= javascript_include_tag "bootstrap.min.js" %>
+
+
+<script type="text/javascript">
+  <!--
+  $(document).ready(function() {
+    $(".swipebox").swipebox();
+    $("ul#slides").responsiveSlides({
+      timeout: 5000,
+      speed: 800,
+      pager: false,
+      nav: false,
+      maxwidth: 960
+    });
+    $("ul#quotes").responsiveSlides({
+      timeout: 5000,
+      speed: 800,
+      pager: false,
+      nav: false,
+      maxwidth: 960
+    });
+    $("ul#courses").responsiveSlides({
+      timeout: 5000,
+      speed: 800,
+      pager: true,
+      nav: false,
+      maxwidth: 960
+    });
+    $("ul#gamernews").responsiveSlides({
+      timeout: 5000,
+      speed: 800,
+      pager: true,
+      nav: false,
+      maxwidth: 960
+    });
+  });
+  // -->
+</script>

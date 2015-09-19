@@ -21,6 +21,10 @@ Rails.application.routes.draw do
 
   get '/users/sign_up' => 'registrations#new'
 
+  get '/contact', to: 'pages#contact', as: 'contact'
+
+  get '/player', to: 'pages#player', as: 'player'
+
 
 
 

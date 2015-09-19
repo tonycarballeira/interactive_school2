@@ -1,0 +1,117 @@
+  <%= javascript_include_tag "bootstrap.min.js" %>
+  <!-- page -->
+  <div class="page">
+
+    <!-- player page -->
+    <div class="player_page">
+      <div class="project_list">
+        <span class="trigger-title">1. Project Description</span>
+        <div class="trigger-box">
+          This series of video tutorials is for those who are completely new to Unity 3D and want to get up and running quickly with the fundamental features of Unity. Each of these videos is design to teach you step by step the core basics of Unity so you can go on and learn from more advanced tutorials throughout the site.  Each of these videos is design to teach you step by step the core basics of Unity so you can go on and learn from more advanced tutorials throughout the site.
+        </div>
+        <span class="trigger-title">2. Project Files</span>
+        <div class="trigger-box download-box">
+          <p>Download project files</p>
+          <a href=""><img src="images/download-img.jpg" alt="" /></a>
+          <p>Secretagent.zip 22MB</p>
+        </div>
+        <span class="trigger-title">3. Chapters</span>
+        <div class="trigger-box">
+          <ul>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter01">Intro to unity3D</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter02">working with objects</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter03">Bulding the project</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter04">Lighting</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter05">Exporting shapes</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter06">Render settings</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter07">Adjusting each item</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter08">setting up particeles</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter09">Adding textures</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter10">Boss battle</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter11">Exporting shapes</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter12">Fading chanles together</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter13">Intro to unity3D</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter14">working with objects</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter15">Bulding the project</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter16">Lighting</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter17">Exporting shapes</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter18">Render settings</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter19">Adjusting each item</a></li>
+            <li><a href="javascript:void(0);" class="chapterlink" id="chapter20">setting up particeles</a></li>
+          </ul>
+        </div>
+      </div>
+      <% if !user_signed_in? %>
+        <div class="videos" onclick="return false" data-toggle="modal" data-target="#myModal">
+          <a href="#"><img src="/images/video_place_holder.jpg"/></a>
+        </div>
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <%= render "devise/sessions/new" %>
+              </div>
+            </div>
+          </div>
+        </div>
+  <% else %>
+    <div class="project_video">
+        <iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+  <% end %>
+    </div>
+    <!-- / player page -->
+
+  </div>
+  <!-- / page -->
+
+
+</div>
+<!-- / wrapper -->
+
+<%= javascript_include_tag "jquery.min.js" %>
+<script type="text/javascript">
+  <!--
+  $(document).ready(function() {
+    function openFirstPanel(){
+      $('div.project_list > span.trigger-title:first-child').addClass('active');
+      $('div.project_list > span.trigger-title:first-child').next().addClass('active').slideDown();
+    }
+    var allPanels = $('div.project_list div.trigger-box').hide();
+    var allTriggers = $('div.project_list span.trigger-title');
+    openFirstPanel();
+    $('div.project_list span.trigger-title').click(function() {
+      allPanels.slideUp();
+      allTriggers.removeClass('active');
+      $(this).toggleClass('active').next().slideDown();
+      return false;
+    });
+    var videolist = {
+      chapter01: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter02: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter03: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter04: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter05: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter06: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter07: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter08: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter09: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter10: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter11: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter12: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter13: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter14: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter15: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter16: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter17: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter18: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter19: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+      chapter20: '<iframe src="http://player.vimeo.com/video/100902001?title=0&byline=0&portrait=0" width="742" height="417" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+    }
+    $('.chapterlink').on('click',function(e){
+       e.preventDefault();
+       $('.project_video').html(videolist[this.id]);
+    });
+  });
+  // -->
+</script>

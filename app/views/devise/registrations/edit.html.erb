@@ -1,241 +1,96 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <title>InteractiveSchool</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
-</head>
-<body data-no-turbolink="true">
-  <div id="page" class="center">
-      
-      <div id="header" class="center">
-        <div id="logo">
-          <%= link_to root_path do %>
-             <%= image_tag "/images/logo.png" %>
-          <% end %>
-        </div>
-        
-        
-        
-        <div id="buttons-list">
-          <ul class="list-inline buttons">
-            
-            <li class="head-li"><%= link_to "TRAINING", training_path %></li>
-            
-            <% if user_signed_in? %>
-              <li class="head-li"><%= link_to "PROFILE", edit_user_registration_path, :class => 'navbar-link'%></li>
-              <li class="head-li"><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-            <% else %>
-              <li class="head-li"><%= link_to "SIGN UP", new_user_registration_path %></li>
-              <li class="head-li"><%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></li>
-            <% end %>
-          </ul>
-          
-        </div>
-
-
-        <div class="alert-div">
-            <ul class="notice">
-              <% if notice %>
-                <li class="alert"><%= notice %></li>
-              <% end %>
-        
-              <% if alert %>
-                <li class="alert"><%= alert %></li>
-              <% end %>
-            </ul>
-        </div>
-      </div>
-
-      <div id="body">
-        <div id="image-banner">
-          <div class="banner-name">
-            <p>HELLO  <%= current_user.first_name.upcase %></p>
-          </div>
-
-          <div class="time-left">
-            <p>Time left as a student</p>
-          </div>
-
-          <div class="countdown">
-            <% start_time = Date.today  %>
-            <% @years = current_user.subscription.sub_years %>
-            <% if current_user.subscription.sub_years > 1 %>
-            <% @end_time = (current_user.sub_expire_date.to_date + (@years - 1).years).to_s %>
-            <% else %>
-            <% @end_time = current_user.sub_expire_date.to_date.to_s %>
-            <% end %>
-            <div id="getting-started"></div>
-               <%= javascript_tag do %>
-
-                $("#getting-started")
-                 .countdown("<%= @end_time %>", function(event) {
-                   $(this).text(
-                    event.strftime('%D days %H:%M:%S')
-                   );
-                });
-               <% end %>
-            </div>
-            
-            
-          </div>
-          
-          
-        </div>
-
-        <div class="edit-user">
-          
-
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-              <%= devise_error_messages! %>
-              <div class="labels1">
-                <div class="lab1">NAME</div>
-                <div class="lab2">AGE</div>
-                <div class="lab3">LOCATION</div>
-              </div>
-              <div class="row1">
-                <div class="field dis">
-                  <%= f.text_field :first_name, class: "edit-field1" %>
-                </div>
-
-                <div class="field dis">  
-                  <%= f.text_field :last_name, class: "edit-field2" %>
-                </div>
-
-                <div class="field dis">
-                  <%= f.text_field :age, class: "edit-field3" %>
-                </div>
-
-                <div class="field dis">
-                  <%= f.text_field :location, class: "edit-field4" %>
-                </div>
-              </div>
-              
-              <div class="labels1">
-                <div class="lab1">EMAIL</div>
-                <div class="lab2"></div>
-                <div class="lab3b">FAVORITE COLOR</div>
-              </div>
-              
-              <div class="row1">
-                <div class="field dis">
-                  <%= f.email_field :email, class: "edit-field1b" %>
-                </div>
-
-                <div class="field dis">
-                  <%= f.text_field :fav_color, class: "edit-field4b" %>
-                </div>
-              </div>
-              
-              <div class="actions">
-                <%= f.submit "Update", class: "submit-it" %>
-              </div>
-            <% end %>
-
-            <div class="block_land">
-              <img src="/images/block_land.png"/>
-            </div>
-
-          <div class="payment-form2">
+ 
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css' />
   
-            <div class="form-sub-header"><p>Payment Method</p></div>
+</head>
+<body>
+  <div class="rapidxwpr">
+    <!-- header -->
+      <div id="header">
 
-            <%= form_for current_user.subscription do |builder| %>
-              
-                <div class="field-card">
-                  <%= builder.label :card_type, "CARD TYPE" %><br />
-                  <%= builder.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]], {}, {class: "form-field"} %>
-                </div>
-
-                <div class="field">
-                  <%= builder.label :card_number, "CREDIT CARD NUMBER" %><br />
-                  <%= builder.text_field :card_number, class: "form-field" %>
-                </div>
-                
-                <div class="row2">
-                  <div class="field dis">
-                    <%= builder.label :first_name, "FIRST NAME" %><br />
-                    <%= builder.text_field :first_name, class: "form-field-name" %>
-                  </div>
-
-                  <div class="field dis">
-                    <%= builder.label :last_name, "LAST NAME" %><br />
-                    <%= builder.text_field :last_name, class: "form-field-name" %>
-                  </div>
-                </div>
-                <div class="row2">
-                  <div class="field dis">
-                    <%= builder.label :card_expires_on, "EXPIRATION DATE" %><br />
-                    <%= builder.date_select :card_expires_on, {:discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true}, :html => {class: "form-field"} %>
-                  </div>
-
-                  <div class="field dis fer">
-                    <%= builder.label :card_verification, "CVV2" %><br />
-                    <%= builder.text_field :card_verification, class: "form-field-card" %>
-                  </div>
-                </div>
-                
-          </div>  
-
-          <div class="address2">
-
-            <div class="form-sub-header"><p>Billing Address</p></div>
-            
-            <div class="field-country">
-              <%= builder.label :country, "COUNTRY" %><br />
-              <%= builder.text_field :country, class: "form-field" %>
-            </div>
-
-            <div class="field">
-              <%= builder.label :state, "STATE" %><br />
-              <%= builder.text_field :state, class: "form-field" %>
-            </div>
-            
-            <div class="row2">
-              <div class="field dis">
-                <%= builder.label :city, "CITY" %><br />
-                <%= builder.text_field :city, class: "form-field-name" %>
-              </div>
-
-              <div class="field dis">
-                <%= builder.label :postal_code, "POSTAL CODE" %><br />
-                <%= builder.text_field :postal_code, class: "form-field-name" %>
-              </div>
-
-              <div class="actions">
-                <%= builder.submit "", class: "submit-it2" %>
-              </div>
-            </div>
-            
-              
-          </div>
-          <div class="increment">
-            <div class="field">
-                <%= builder.number_field :years, :min => 1, :value => 1, :max => 10, class: "time-field" %>
-            </div>
-          </div>
-          
+        <div class="logo">
+          <%= link_to root_path do %>
+            <%= image_tag "/images/logo.png" %>
         <% end %>
-            <div class="add_time">
-              <img src="/images/add_more_time.png"/>
-            </div>
-            <div class="time-add">
-               <p>Years of training you would like to add?</p>
-            </div>
+        </div>
 
-            <div class="time-quote">
-               <p>Special rate of $99 per year</p>
-            </div>
-          </div>
+        <div class="topmenu">
+          <ul>
+            <li><%= link_to "Training", training_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+            <% if user_signed_in? %>
+
+            <li class="head-li"><%= link_to "Profile", edit_user_registration_path, :class => 'navbar-link'%></li>
+
+            <li class="head-li"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+          <% else %>
+            <li class="head-li"><%= link_to "Become a Student", new_user_registration_path %></li>
+            <li class="head-li"><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+          <% end %>
+          </ul>
         </div>
-      
-        <div class="footer">
-          <div id="facebook">
-            <a href="#"> <img src="/images/facebook.png"/> </a>
-        </div>
+
       </div>
-    </div>
-</div>
+  <!-- page -->
+  <div class="page">
 
+    <!-- student page -->
+    <div class="student_page">
+
+      <h1>Hello Jennifer</h1>
+      <div class="enrollment_time"><span class="title">Enrollment left:</span> <span>73days 07:24:25</span> <a href="" class="add_time">Add more time</a></div>
+      <form action="" method="post">
+        <ul>
+          <li><label>Name</label><input type="text" name="" class="form-field" value="Jennifer DeVoid" /></li>
+          <li><label>Username</label><input type="text" name="" class="form-field" value="dvoid@gmail.com" /></li>
+          <li><label>Password</label><input type="password" name="" class="form-field" value="***********" /></li>
+          <li><label>Age</label><input type="text" name="" class="form-field" value="26" /></li>
+          <li><label>Phone</label><input type="text" name="" class="form-field" value="305-555-0155" /></li>
+          <li><label>Location</label><input type="text" name="" class="form-field" value="Miami, Florida" /><input type="submit" name="" class="form-btn" value="EDIT PROFILE" /></li>
+        </ul>
+      </form>
+
+    </div>
+    <!-- / student page -->
+
+  </div>
+  <!-- / page -->
+
+  <!-- footer -->
+  <div id="footer">
+    <div class="footer_menu">
+      <ul>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="">FAQ</a></li>
+        <li><a href="student.html">Become a student</a></li>
+        <li><a href="">Login</a></li>
+      </ul>
+      <ul>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Privacy</a></li>
+        <li><a href="">Terms</a></li>
+      </ul>
+    </div>
+    <div class="footer_share"><a href="">Share with a friend</a></div>
+    <div class="footer_social_links">
+      <a href=""><img src="/images/icon-twitter.png" alt="" /></a>
+      <a href=""><img src="/images/icon-facebook.png" alt="" /></a>
+      <a href=""><img src="/images/icon-instagram.png" alt="" /></a>
+    </div>
+  </div>
+  <!-- / footer -->
+
+</div>
+<!-- / wrapper -->
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+</body>
+</html>
