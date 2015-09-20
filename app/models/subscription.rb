@@ -8,13 +8,13 @@ class Subscription < ActiveRecord::Base
   # validate :validate_card, :on => :create
   
   before_update :set_year, :add_years, :a_thing
-  before_create :purchase
+  # before_create :purchase
 
-	def purchase
-    @response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)  
-    @years = ""
-    @response.success?
-  end
+	# def purchase
+ #    @response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)  
+ #    @years = ""
+ #    @response.success?
+ #  end
 
   def set_year
     @years = years
@@ -37,27 +37,27 @@ class Subscription < ActiveRecord::Base
     end
   end
   
-	def price_in_cents
-    if @years == "" || @years == nil
-      @years = 1
-    end
-    (1*100).round * @years.to_i 
-	end
+	# def price_in_cents
+ #    if @years == "" || @years == nil
+ #      @years = 1
+ #    end
+ #    (1*100).round * @years.to_i 
+	# end
 
 	private
 
-	def purchase_options
-    {
-      :ip => ip_address,
-      :billing_address => {
-        :name     => first_name + " " + last_name,
-        :city     => city,
-        :state    => state,
-        :country  => country,
-        :zip      => postal_code
-      }
-    }
-  end
+	# def purchase_options
+ #    {
+ #      :ip => ip_address,
+ #      :billing_address => {
+ #        :name     => first_name + " " + last_name,
+ #        :city     => city,
+ #        :state    => state,
+ #        :country  => country,
+ #        :zip      => postal_code
+ #      }
+ #    }
+ #  end
 
 	# def validate_card
  #    unless credit_card.valid?
@@ -67,15 +67,15 @@ class Subscription < ActiveRecord::Base
  #    end
  #  end
   
-  def credit_card
-    @credit_card ||= ActiveMerchant::Billing::CreditCard.new(
-      :brand               => card_type,
-      :number             => card_number,
-      :verification_value => card_verification,
-      :month              => card_expires_on.month,
-      :year               => card_expires_on.year,
-      :first_name         => first_name,
-      :last_name          => last_name
-    )
-  end
+  # def credit_card
+  #   @credit_card ||= ActiveMerchant::Billing::CreditCard.new(
+  #     :brand               => card_type,
+  #     :number             => card_number,
+  #     :verification_value => card_verification,
+  #     :month              => card_expires_on.month,
+  #     :year               => card_expires_on.year,
+  #     :first_name         => first_name,
+  #     :last_name          => last_name
+  #   )
+  # end
 end
