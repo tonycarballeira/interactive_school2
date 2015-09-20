@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
  
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css' />
+
+  <%= javascript_include_tag "jquery.min.js" %>
+  <%= javascript_include_tag "jquery.tubolinks.js" %>
+  <%= javascript_include_tag "responsiveslides.min.js" %>
+  <%= javascript_include_tag "jquery.swipebox.min.js" %>
+  <%= javascript_include_tag "jquery.countdown.min.js" %>
   
 </head>
 <body>
@@ -39,22 +45,41 @@
       </div>
   <!-- page -->
   <div class="page">
-
     <!-- student page -->
     <div class="student_page">
 
-      <h1>Hello Jennifer</h1>
-      <div class="enrollment_time"><span class="title">Enrollment left:</span> <span>73days 07:24:25</span> <a href="" class="add_time">Add more time</a></div>
-      <form action="" method="post">
+      <h1>Hello <%= current_user.first_name %></h1>
+      <div class="enrollment_time"><span class="title">Enrollment left:</span> <span class="countdown">
+                    <% start_time = Date.today  %>
+                    <% @years = current_user.subscription.sub_years %>
+                    <% if current_user.subscription.sub_years > 1 %>
+                    <% @end_time = (current_user.sub_expire_date.to_date + (@years - 1).years).to_s %>
+                    <% else %>
+                    <% @end_time = current_user.sub_expire_date.to_date.to_s %>
+                    <% end %>
+                      <span id="getting-started"></span>
+                       <%= javascript_tag do %>
+
+                        $("#getting-started")
+                         .countdown("<%= @end_time %>", function(event) {
+                           $(this).text(
+                            event.strftime('%D days %H:%M:%S')
+                           );
+                        });
+                       <% end %>
+                  </span> 
+          <a href="" class="add_time">Add more time</a></div>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      
         <ul>
-          <li><label>Name</label><input type="text" name="" class="form-field" value="Jennifer DeVoid" /></li>
-          <li><label>Username</label><input type="text" name="" class="form-field" value="dvoid@gmail.com" /></li>
-          <li><label>Password</label><input type="password" name="" class="form-field" value="***********" /></li>
-          <li><label>Age</label><input type="text" name="" class="form-field" value="26" /></li>
+          <li><label>Name</label><%= f.text_field :first_name, class: "edit-field1" %><%= f.text_field :last_name, class: "edit-field1" %></li>
+          <li><label>Username</label><%= f.email_field :email, class: "edit-field2" %></li>
+          <li><label>Age</label><%= f.text_field :age, class: "edit-field3" %></li>
           <li><label>Phone</label><input type="text" name="" class="form-field" value="305-555-0155" /></li>
-          <li><label>Location</label><input type="text" name="" class="form-field" value="Miami, Florida" /><input type="submit" name="" class="form-btn" value="EDIT PROFILE" /></li>
+          <li><label>Location</label><%= f.text_field :location, class: "edit-field2" %><%= f.submit "Edit Profile", class: "form-btn" %></li>
         </ul>
-      </form>
+      <% end %>
 
     </div>
     <!-- / student page -->

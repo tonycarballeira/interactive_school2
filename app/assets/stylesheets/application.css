@@ -929,6 +929,7 @@ div.student_page ul li .form-btn {
     padding:0;
     text-transform:uppercase;
     cursor:pointer;
+    margin-left: 20px;
 }
 
 #myModal .modal-content {
@@ -1249,4 +1250,40 @@ div.student_page ul li .form-btn {
     position:absolute;
     right: -70px;
     top: 315px;
+}
+
+.edit-field1 {
+    width: 130px;
+    background-color: #131313;
+    transition: box-shadow 0.3s;
+    text-decoration: none;
+    height: 40px;
+    border-width: 0;
+    border-color: gray; 
+    font-size: 28px;
+    display: inline-block;
+}
+
+.edit-field2 {
+    width: 370px;
+    background-color: #131313;
+    transition: box-shadow 0.3s;
+    text-decoration: none;
+    height: 40px;
+    border-width: 0;
+    border-color: gray; 
+    font-size: 28px;
+    display: inline-block;
+}
+
+.edit-field3 {
+    width: 60px;
+    background-color: #131313;
+    transition: box-shadow 0.3s;
+    text-decoration: none;
+    height: 40px;
+    border-width: 0;
+    border-color: gray; 
+    font-size: 28px;
+    display: inline-block;
 }
