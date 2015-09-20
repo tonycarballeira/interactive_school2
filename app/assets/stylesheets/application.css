@@ -1068,7 +1068,7 @@ div.student_page ul li .form-btn {
     left: 40px;
     font-family: 'Open Sans', sans-serif;
     font-size: 35px;
-    color: grey;
+    color: gray;
     position: absolute;
 }
 
@@ -1081,7 +1081,7 @@ div.student_page ul li .form-btn {
 }
 
 .field-email {
-    color: grey;
+    color: gray;
     font-family: 'Open Sans', sans-serif;
     
     margin-top: 10px;
@@ -1094,7 +1094,7 @@ div.student_page ul li .form-btn {
     text-decoration: none;
     height: 32px;
     border-width: 1px;
-    border-color: grey; 
+    border-color: gray; 
     margin-bottom: 12px;
     font-size: 14px;
 }
@@ -1108,7 +1108,7 @@ div.student_page ul li .form-btn {
     background: #151515;
     border-width: 1px;
     border-radius: 5px;
-    border-color: grey;
+    border-color: gray;
     border-style: solid;
     padding-left: 20px;
     padding-top: 35px;
@@ -1123,14 +1123,14 @@ div.student_page ul li .form-btn {
     background: #151515;
     border-width: 1px;
     border-radius: 5px;
-    border-color: grey;
+    border-color: gray;
     border-style: solid;
     padding-left: 20px;
     padding-top: 35px;
 }
 
 .field-card {
-    color: grey;
+    color: gray;
     font-family: 'Open Sans', sans-serif;
     margin-top: 10px;   
 }
@@ -1146,7 +1146,7 @@ div.student_page ul li .form-btn {
     text-decoration: none;
     height: 32px;
     border-width: 1px;
-    border-color: grey; 
+    border-color: gray; 
     margin-bottom: 7px;
     font-size: 14px;
 }
@@ -1168,7 +1168,7 @@ div.student_page ul li .form-btn {
     text-decoration: none;
     height: 32px;
     border-width: 1px;
-    border-color: grey; 
+    border-color: gray; 
     margin-bottom: 7px;
     font-size: 14px;
 }
@@ -1182,14 +1182,14 @@ div.student_page ul li .form-btn {
     background: #151515;
     border-width: 1px;
     border-radius: 5px;
-    border-color: grey;
+    border-color: gray;
     border-style: solid;
     padding-left: 20px;
     padding-top: 35px;
 }
 
 .field-country {
-    color: grey;
+    color: gray;
     font-family: 'Open Sans', sans-serif;
     margin-top: 10px;
 }
@@ -1286,4 +1286,17 @@ div.student_page ul li .form-btn {
     border-color: gray; 
     font-size: 28px;
     display: inline-block;
+}
+
+.alert-div {
+    position: absolute;
+    right: 240px;
+    top: 23px;
+    font-family: 'Open Sans', sans-serif;
+    color: #752672;
+}
+
+.notice {
+    list-style-type: none;
+
 }

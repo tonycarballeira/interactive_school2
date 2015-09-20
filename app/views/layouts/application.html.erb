@@ -40,7 +40,17 @@
 					<% end %>
 		      </ul>
 		    </div>
-
+        <div class="alert-div">
+            <ul class="notice">
+              <% if notice %>
+                <li class="alert"><%= notice %></li>
+              <% end %>
+        
+              <% if alert %>
+                <li class="alert"><%= alert %></li>
+              <% end %>
+            </ul>
+        </div>
   		</div>
   <!-- / header -->
 			
