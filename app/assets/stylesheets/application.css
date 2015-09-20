@@ -1290,13 +1290,13 @@ div.student_page ul li .form-btn {
 
 .alert-div {
     position: absolute;
-    right: 240px;
-    top: 23px;
+    right: 400px;
+    top: 38px;
     font-family: 'Open Sans', sans-serif;
     color: #752672;
 }
 
-.notice {
+/*.notice {
     list-style-type: none;
 
-}
+}*/
