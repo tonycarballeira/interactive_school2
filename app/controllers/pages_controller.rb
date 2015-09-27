@@ -17,4 +17,7 @@ class PagesController < ApplicationController
 
 	def player
 	end
+
+	def game_art
+	end
 end

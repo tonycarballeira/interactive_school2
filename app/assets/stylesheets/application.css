@@ -73,9 +73,9 @@ a {
     text-decoration:none;
 }
 
-a:hover {
+/*a:hover {
     text-decoration:underline;
-}
+}*/
 
 /* header elements */
 h1, h2, h3, h4, h5, h6 {
@@ -139,9 +139,9 @@ i, em {
     font-style:italic;
 }
 
-u {
+/*u {
     text-decoration:underline;
-}
+}*/
 
 /* header */
 div#header {
@@ -1300,3 +1300,165 @@ div.student_page ul li .form-btn {
     list-style-type: none;
 
 }*/
+
+/* art page intro */
+div.art_page_intro1 {
+    background:url(../images/art-intro-img1.png) 100% 100% no-repeat;
+    padding:65px 335px 35px 20px;
+    min-height:210px;
+    font-size:12px;
+    line-height:2em;
+    margin:-40px -45px 0 0;
+    position:relative;
+    z-index:20;
+}
+
+div.art_page_intro1 h2 {
+    font-size:35px;
+    font-weight:300;
+    letter-spacing:4px;
+    margin-bottom:17px;
+}
+
+div.art_page_intro2 {
+    font-size:12px;
+    line-height:2em;
+    position:relative;
+    z-index:30;
+    border:rgba(255, 255, 255, 0.1) 1px solid;
+    padding:15px 15px 35px 270px;
+    height:100px;
+    margin-bottom:300px;
+    -webkit-box-shadow:inset 0 0 10px 15px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow:inset 0 0 10px 15px rgba(0, 0, 0, 0.8);
+    box-shadow:inset 0 0 10px 15px rgba(0, 0, 0, 0.8);
+}
+
+div.art_page_intro2 h3 {
+    font-size:23px;
+    font-weight:300;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+div.art_page_intro2 img.art-intro-img2 {
+    position:absolute;
+    top:-95px;
+    left:-91px;
+}
+
+/* art packs title */
+div.art_packs_title {
+    -webkit-box-shadow:inset 0 0 30px 5px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow:inset 0 0 30px 5px rgba(0, 0, 0, 0.8);
+    box-shadow:inset 0 0 30px 5px rgba(0, 0, 0, 0.8);
+    text-align:center;
+    clear:both;
+    padding:20px;
+    border-top:rgba(255, 255, 255, 0.05) 1px solid;
+    border-bottom:rgba(255, 255, 255, 0.05) 1px solid;
+    margin-bottom:40px;
+}
+
+div.art_packs_title h1 {
+    font-size:48px;
+    font-weight:300;
+    letter-spacing:5px;
+}
+
+/* art pack box */
+div.art_pack_box {
+    padding:0;
+    font-size:18px;
+    text-transform:uppercase;
+    margin-bottom:50px;
+}
+
+div.art_pack_box h3 {
+    font-size:23px;
+    text-transform:uppercase;
+    font-weight:300;
+    letter-spacing:3px;
+    padding:0 25px;
+    margin-bottom:17px;
+}
+
+div.art_pack_box a {
+    color:#828282;
+}
+
+div.art_pack_box div.art_pack_access {
+    border:rgba(255, 255, 255, 0.1) 1px solid;
+    -webkit-box-shadow:inset 0 0 30px 5px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow:inset 0 0 30px 5px rgba(0, 0, 0, 0.8);
+    box-shadow:inset 0 0 30px 5px rgba(0, 0, 0, 0.8);
+    overflow:hidden;
+}
+
+div.art_pack_box div.art_pack_access div.art_pack_download {
+    width:42%;
+    border-right:rgba(255, 255, 255, 0.1) 1px solid;
+    float:left;
+    height:52px;
+    padding:14px 4%;
+    text-align:center;
+    letter-spacing:2px;
+}
+
+div.art_pack_box div.art_pack_access div.art_pack_download a {
+    background:url(../images/download-btn.png) 100% 0 no-repeat;
+    display:inline-block;
+    text-align:right;
+    padding:2px 85px 2px 0;
+    height:48px;
+    text-decoration:none;
+}
+
+div.art_pack_box div.art_pack_access div.art_pack_download a:hover {
+    color:#999;
+}
+
+div.art_pack_box div.art_pack_access div.art_pack_download a em {
+    font-size:12px;
+    display:block;
+    font-style:normal;
+    letter-spacing:1px;
+    margin-top:5px;
+}
+
+div.art_pack_box div.art_pack_access div.art_pack_buy {
+    width:41%;
+    float:right;
+    height:52px;
+    padding:14px 4%;
+    text-align:right;
+    letter-spacing:1px;
+}
+
+div.art_pack_box div.art_pack_access div.art_pack_buy a {
+    font-size:14px;
+    float:right;
+    background:rgba(255, 255, 255, 0.04);
+    border:rgba(255, 255, 255, 0.1) 1px solid;
+    padding:6px 20px 8px 20px;
+    text-align:center;
+    color:#646f7c;
+    text-shadow:rgba(0, 0, 0, 0.8) 1px 1px 3px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    margin-left:75px;
+    text-decoration:none;
+}
+
+div.art_pack_box div.art_pack_access div.art_pack_buy a em {
+    font-size:9px;
+    font-style:normal;
+    display:block;
+    margin-top:5px;
+}
+
+div.art_pack_box div.art_pack_access div.art_pack_buy a:hover {
+    background:rgba(255, 255, 255, 0.07);
+    border:rgba(255, 255, 255, 0.2) 1px solid;
+}

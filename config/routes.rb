@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get '/player', to: 'pages#player', as: 'player'
 
+  get '/gameart', to: 'pages#game_art', as: 'gameart'
+
 
 
 
